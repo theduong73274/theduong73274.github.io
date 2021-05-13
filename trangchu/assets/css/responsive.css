@@ -1,0 +1,168 @@
+
+@media only screen and (max-width: 1240px){
+    .nav__list-link{
+        padding: 0 24px;
+    }
+    .home__ticket-stand--input,
+    .home__ticket-quantity--input{
+        padding: 6px 4px;
+    }
+    .home__ticket-quantity--input{
+        padding: 6px 11px;
+    }
+    
+}
+/* Mobile & tablet */
+@media only screen and (max-width: 63.9375em){
+    .hide-on-mobile-tablet {
+        display: none;
+    }
+    .wapper{
+        flex-wrap: wrap-reverse;
+    }
+    .header{
+        background-color: var(--primary-color);
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+    }
+    .header__logo{
+        display: block;
+    }
+    .header__with-nav{
+        display: flex;
+    }
+    .ticket__input--option {
+        margin-left: 18px;
+    }
+    .ticket__infor--btn.ticket__infor--btn-mobile{
+        display: block;
+    }
+    .ticket__infor--btn.ticket__infor--btn-PC{
+        display: none;
+    }
+    .ticket__infor, 
+    .ticket__infor--btn{
+        margin: 16px 0;
+    }
+    .footer__infor-contact{
+        margin-top: 36px;
+    }
+}
+
+/* Tablet */
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em){
+    .hide-on-tablet {
+        display: none;
+    }
+    .container{
+        margin-top: var(--header-with-height);
+    }
+    .header__with-nav,
+    .header{
+        height: var(--header-with-height);
+    }
+    .header__with-nav{
+        margin: 0 16px;
+    }
+    .header__logo--img{
+        width: 80%;
+        margin: 0 auto;
+        height: 60px;
+        border-radius: 10px;
+    }
+    .header__navbar--icon,
+    .header__navbar--icon{
+        font-size: 2.8rem;
+    }
+    .home__news-hot{
+        margin: 0 16px;
+    }
+    .home__login-member--account {
+        margin: 0 53px;
+    }
+    .home__login-member--heading {
+        margin: 10px 0 10px 8px;
+    }
+    .home__ticket-input--option{
+        margin-bottom: 16px;
+    }
+    .home__ticket-stand--input{
+        margin: 8px auto;
+    }
+    .home__ticket {
+        padding: 4px 0;
+         margin: 0 ;
+    }
+
+    
+    .book-btn{
+        margin: 12px 0 22px;
+    }
+    .home__login-member--heading{
+        font-size: 1.8rem;
+        margin: 16px 0;
+    }
+    .input-control{
+        padding: 3px 0 3px 11px;
+        font-size: 1.7rem;
+    }
+}  
+
+/* Mobile */
+@media only screen and (max-width: 46.1875em){
+    .hide-on-mobile {
+        display: none;
+    }
+    
+    .container{
+        margin-top: var(--header-height);
+    }
+    .header{
+        height: var(--header-height);
+    }
+    
+    
+    .home__ticket-input--option{
+        margin-bottom: 16px;
+    }
+    .home__ticket-stand--input{
+        margin: 8px auto;
+    }
+    .book-btn{
+        margin: 12px 0 22px;
+    }
+    .home__login-member--heading{
+        font-size: 1.8rem;
+        margin: 16px 0;
+    }
+    .input-control{
+        padding: 8px 0 8px 10px;
+        font-size: 1.8rem;
+    }
+    .home__ticket-stand{
+        flex: 1;
+       text-align: center;
+    }
+    .home__ticket-quantity--input{
+        font-size: 1.6rem;
+        padding: 6px 20px;
+    }
+    .book-btn{
+        height: 42px;
+    }
+
+    .customer__infor--input{
+        display: block;
+    }
+    .customer__infor--sub{
+        margin-top: 24px;
+    }
+    
+    .home__ticket {
+        padding: 0 0 16px 0;
+    }
+    
+}
