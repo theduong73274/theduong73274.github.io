@@ -48,6 +48,12 @@
 
             <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100">
 
+            <div class="volume">
+                <p class="volume_show">90</p>
+                <i class="fas fa-volume-up" aria-hidden="true" id="volume_icon"></i>
+                <input type="range" class="volume_input" min="0" max="100" value="90" id="volume" onchange="volume_onchange()">
+            </div>
+
             <audio id="audio" src=""></audio>
         </div>
 
@@ -58,7 +64,7 @@
     </div>
 
 <!-- Design from: https://static.collectui.com/shots/3671744/musicloud-revolutionary-app-for-music-streaming-large -->
-
+  
     <script src="./main.js"></script>
 </body>
 </html>

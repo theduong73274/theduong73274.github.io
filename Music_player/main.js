@@ -30,6 +30,8 @@ const prevBtn = $('.btn-prev')
 const randomBtn = $('.btn-random')
 const repeatBtn = $('.btn-repeat')
 const playlist = $('.playlist')
+const recent_volume = $('#volume')
+const volume_shown = $('.volume_shown')
 var count = 0
 var arrayTemp = []
 const app = {
@@ -256,6 +258,13 @@ const app = {
             }else{
                 nextBtn.click()
             }
+        }
+
+        // xử lí tăng giảm âm lượng
+        recent_volume.onchange = function(){
+            // volume_shown.value = recent_volume.value
+            levelVolume = recent_volume.value /100
+            audio.volume = levelVolume
         }
 
         // Xử lí khi click vào playlist
