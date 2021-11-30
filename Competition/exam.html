@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo đề thi</title>
+    <link rel="icon" href="./assets/img/saovang.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel='stylesheet' href='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css'>
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <script src='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js'></script>
+</head>
+
+<body>
+
+    <!-- Begin Header -->
+    <header class="header">
+        <div class="container-fluid">
+            <div class="header__main">
+                <div class="header__logo">
+                    <img src="./assets/img/header.png" alt="" class="header__logo-img">
+                </div>
+
+                <div class="dropdown">
+                    <div class="header__login dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="./assets/img/user.png" alt="" class="header__login-avatar">
+                        <span class="header__login-name">Người dùng</span>
+                    </div>
+                    <ul class="dropdown-menu header__login-list">
+                        <li class="header__login-item">
+                            <a href="#" class="header__login-link dropdown-item">Trang chủ</a>
+                        </li>
+                        <li class="header__login-item">
+                            <a href="#" class="header__login-link dropdown-item">Thông tin cá nhân</a>
+                        </li>
+                        <li class="header__login-item">
+                            <a href="#" class="header__login-link dropdown-item">Lịch sử làm bài</a>
+                        </li>
+                        <li class="header__login-item">
+                            <a href="#" class="header__login-link dropdown-item">Đăng xuất</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End Header -->
+
+
+    <!-- Begin Main -->
+    <section class="main">
+        <div class="container-fluid">
+            <div class="row gx-3">
+                <div class="col-md-1">
+                    <!-- Tabs Page -->
+                    <div class="main__tabs">
+                        <div class="main__tabs-item ">
+                            <div class="main__tabs-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="24" height="24" viewBox="0 0 24 24">
+                                    <defs>
+                                        <rect id="rect-1" width="24" height="24" x="0" y="0" rx="0" ry="0" />
+                                        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+                                            <rect width="24" height="24" x="0" y="0" fill="black" />
+                                            <use fill="white" xlink:href="#rect-1" />
+                                        </mask>
+                                    </defs>
+                                    <g>
+                                        <use fill="none" xlink:href="#rect-1" />
+                                        <g mask="url(#mask-2)">
+                                            <path fill="rgb(46,58,89)" fill-rule="evenodd"
+                                                d="M7 7c0 2.75699997 2.24300003 5 5 5s5-2.24300003 5-5-2.24300003-5-5-5-5 2.24300003-5 5zm2 0c0-1.65400028 1.34599972-3 3-3s3 1.34599972 3 3-1.34599972 3-3 3-3-1.34599972-3-3zm5 6c3.85900116 0 7 3.14099884 7 7v1h-2v-1c0-2.75699997-2.24300003-5-5-5h-4c-2.75699997 0-5 2.24300003-5 5v1H3v-1c0-3.85900116 3.14000034-7 7-7h4z" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="main__tabs-text">Tài khoản</div>
+                        </div>
+                        <div class="main__tabs-item">
+                            <div class="main__tabs-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="24" height="24" viewBox="0 0 24 24">
+                                    <defs>
+                                        <rect id="rect-1" width="24" height="24" x="0" y="0" rx="0" ry="0" />
+                                        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+                                            <rect width="24" height="24" x="0" y="0" fill="black" />
+                                            <use fill="white" xlink:href="#rect-1" />
+                                        </mask>
+                                    </defs>
+                                    <g>
+                                        <use fill="none" xlink:href="#rect-1" />
+                                        <g mask="url(#mask-2)">
+                                            <path fill="rgb(46,58,89)" fill-rule="evenodd"
+                                                d="M5 3c-1.10300016 0-2 .89699984-2 2v14c0 1.10300064.89699984 2 2 2h8c.13099957 0 .25999928-.02600098.38099957-.07600021.12100029-.04999924.23200035-.1229992.3260002-.21699906l7.00000096-7.00000095c.08600044-.08600044.14699936-.18700028.19599915-.29300022.01399994-.02999974.02200126-.06099987.03300094-.09299946.02799988-.08399963.04599953-.17000008.0509987-.25899983C20.98900031 13.04100037 21 13.02099991 21 13V5c0-1.10300016-.89699936-2-2-2H5zm14 2v7h-6c-.5529995 0-1 .44799995-1 1v6H5V5h14zm-1.41399956 9H14v3.58600044L17.58600044 14z" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="main__tabs-text">Tài liệu</div>
+                        </div>
+                        <div class="main__tabs-item active">
+                            <div class="main__tabs-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="24" height="24" viewBox="0 0 24 24">
+                                    <defs>
+                                        <rect id="rect-1" width="24" height="24" x="0" y="0" rx="0" ry="0" />
+                                        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+                                            <rect width="24" height="24" x="0" y="0" fill="black" />
+                                            <use fill="white" xlink:href="#rect-1" />
+                                        </mask>
+                                    </defs>
+                                    <g>
+                                        <use fill="none" xlink:href="#rect-1" />
+                                        <g mask="url(#mask-2)">
+                                            <path fill="rgb(46,58,89)" fill-rule="evenodd"
+                                                d="M8 2h12c1.10300064 0 2 .89699984 2 2v12c0 1.10300064-.89699936 2-2 2H8c-1.10300016 0-2-.89699936-2-2V4c0-1.10300016.89699984-2 2-2zm0 14V4h12l.0020008 12H8zm9.29296875-9.56048584l1.41400146 1.41399956-5.70700168 5.70699882-3.70699978-3.70699882 1.41399956-1.41399956 2.29300022 2.29300022 4.29300022-4.29300022zM2 20V8h2v12h12v2H4c-1.10300016 0-2-.89699936-2-2z" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="main__tabs-text">Đề thi</div>
+                        </div>
+                        <div class="main__tabs-item">
+                            <div class="main__tabs-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="24" height="24" viewBox="0 0 24 24">
+                                    <defs>
+                                        <rect id="rect-1" width="24" height="24" x="0" y="0" />
+                                        <rect id="rect-2" width="24" height="24" x="0" y="0" rx="0" ry="0" />
+                                        <mask id="mask-3" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+                                            <rect width="24" height="24" x="0" y="0" fill="black" />
+                                            <use fill="white" xlink:href="#rect-2" />
+                                        </mask>
+                                    </defs>
+                                    <g>
+                                        <use fill="none" xlink:href="#rect-2" />
+                                        <g mask="url(#mask-3)">
+                                            <path fill="rgb(46,58,89)" fill-rule="evenodd"
+                                                d="M8 12c2.20913887 0 4-1.79086113 4-4 0-2.20913887-1.79086113-4-4-4-2.20913887 0-4 1.79086113-4 4 0 2.20913887 1.79086113 4 4 4zm0-2c1.10456944 0 2-.89543056 2-2 0-1.10456944-.89543056-2-2-2-1.10456944 0-2 .89543056-2 2 0 1.10456944.89543056 2 2 2zm11-2v3h3v2h-3v3h-2v-3h-3v-2h3V8h2zM8 13c3.3137083 0 6 2.6862917 6 6h-2c0-2.20913887-1.79086113-4-4-4-2.20913887 0-4 1.79086113-4 4H2c0-3.3137083 2.6862917-6 6-6z" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="main__tabs-text">Nhóm</div>
+                        </div>
+                        <div class="main__tabs-item">
+                            <div class="main__tabs-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="22" height="37" viewBox="0 0 22 37">
+                                    <defs>
+                                        <rect id="rect-1" width="13" height="13" x="0" y="0" />
+                                        <rect id="rect-2" width="13" height="13" x="0" y="0" rx="0" ry="0" />
+                                        <mask id="mask-3" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+                                            <rect width="22" height="37" x="0" y="0" fill="black" />
+                                            <use fill="white" xlink:href="#rect-2" />
+                                        </mask>
+                                        <rect id="rect-5" width="20" height="33" x="0" y="0" />
+                                        <rect id="rect-6" width="20" height="33" x="0" y="0" rx="0" ry="0" />
+                                        <mask id="mask-7" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+                                            <rect width="22" height="37" x="0" y="0" fill="black" />
+                                            <use fill="white" xlink:href="#rect-6" />
+                                        </mask>
+                                    </defs>
+                                    <g>
+                                        <g transform="translate(4 11)">
+                                            <use fill="none" xlink:href="#rect-2" />
+                                            <g mask="url(#mask-3)">
+                                                <path fill="rgb(46,58,89)" fill-rule="evenodd"
+                                                    d="M11.56308746 2.58596706c.2115345.21153403.2115345.55449868 9.6e-7.7660321l-1.14905834 1.1490574-1.91508103-1.91508044L9.6480074 1.43691826c.21153355-.21153355.55449772-.21153355.76603222 9.5e-7l1.14904785 1.14904785zm-9.7080636 7.97053373l.1326598-1.45925855 6.12824976-6.12825 1.91508102 1.9150809-6.12825012 6.12824964-1.4592588.13265992c-.3368814.03062534-.61910724-.25160027-.58848166-.5884819z" />
+                                            </g>
+                                        </g>
+                                        <g transform="translate(1 1)">
+                                            <use fill="none" xlink:href="#rect-6" />
+                                            <g mask="url(#mask-7)">
+                                                <path fill="rgb(46,58,89)" fill-rule="evenodd"
+                                                    d="M18.33333266 26.125c0 1.51662445-.74750042 2.75-1.66666699 2.75H3.33333325c-.9191668 0-1.66666662-1.23337555-1.66666662-2.75V6.875c0-1.51662493.74749982-2.75 1.66666662-2.75h13.33333242c.91916657 0 1.66666699 1.23337507 1.66666699 2.75v19.25zm-1.66666699-16.5H3.33333325v16.5h13.33416593l-.0008335-16.5z" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="main__tabs-text">Cộng đồng</div>
+                        </div>
+                        <div class="main__tabs-item">
+                            <div class="main__tabs-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="24" height="24" viewBox="0 0 24 24">
+                                    <defs>
+                                        <rect id="rect-1" width="24" height="24" x="0" y="0" />
+                                        <rect id="rect-2" width="24" height="24" x="0" y="0" rx="0" ry="0" />
+                                        <mask id="mask-3" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+                                            <rect width="24" height="24" x="0" y="0" fill="black" />
+                                            <use fill="white" xlink:href="#rect-2" />
+                                        </mask>
+                                        <path id="path-4" fill-rule="evenodd"
+                                            d="M20 4H4c-1.10300016 0-2 .84100008-2 1.875v12.25C2 19.1590004 2.89699984 20 4 20h16c1.10300064 0 2-.8409996 2-1.875V5.875C22 4.84100008 21.10300064 4 20 4zM4 17.98900032L20 18V6.01100016L4 6v11.98900032zM9.71502686 8c1.15100002 0 2 .84899998 2 2 0 1.15100002-.84899998 2-2 2-1.15200043 0-2-.84899998-2-2 0-1.15100002.84899997-2 2-2zM18 11h-4V9h4v2zm-8.28499985 1.75C7.67600012 12.75 6 14.6260004 6 16h7.4300003c0-1.3739996-1.67600059-3.25-3.71500015-3.25zM15 13v2h3v-2h-3z" />
+                                        <mask id="mask-5" x="0" y="0" maskContentUnits="userSpaceOnUse"
+                                            maskUnits="userSpaceOnUse">
+                                            <rect width="24" height="24" x="0" y="0" fill="black" />
+                                            <use fill="white" xlink:href="#path-4" />
+                                        </mask>
+                                    </defs>
+                                    <g>
+                                        <use fill="none" xlink:href="#rect-2" />
+                                        <g mask="url(#mask-3)">
+                                            <use fill-opacity="0" stroke="rgb(46,58,89)" stroke-linecap="butt"
+                                                stroke-linejoin="miter" stroke-width="2" mask="url(#mask-5)"
+                                                xlink:href="#path-4" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="main__tabs-text">Nội bộ</div>
+                        </div>
+                        <div class="main__tabs-item">
+                            <div class="main__tabs-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" id="Component_145_1"
+                                    data-name="Component 145 – 1" width="21.979" height="19.879"
+                                    viewBox="0 0 21.979 19.879">
+                                    <path id="Path_326" data-name="Path 326"
+                                        d="M223.853,49.27c.131,0,.238,0,.345,0,.444.005.888,0,1.331.021a.351.351,0,0,1,.254.122c.032.051-.015.184-.066.25-.422.552-.856,1.1-1.281,1.645-.334.432-.659.87-.993,1.3-.252.326-.494.33-.754.016q-1.2-1.453-2.393-2.913c-.068-.084-.135-.244-.1-.319s.2-.116.311-.118q.84-.017,1.681,0c.178,0,.243-.048.278-.228a9.752,9.752,0,0,1,4.912-6.894,9.917,9.917,0,1,1,7.839,18.1,9.665,9.665,0,0,1-9.906-2.335.736.736,0,0,1-.285-.7.657.657,0,0,1,.457-.531.674.674,0,0,1,.7.157c.335.29.654.6,1.013.862a8.546,8.546,0,1,0-3.322-8.683A2.4,2.4,0,0,0,223.853,49.27Z"
+                                        transform="translate(-220.188 -40.87)" fill="#2e3a59" />
+                                    <path id="Path_327" data-name="Path 327"
+                                        d="M262.309,56.717c0,.929.005,1.859,0,2.788,0,.2.057.252.251.252.773,0,1.545.021,2.318.021.811,0,1.623-.02,2.434-.023a.772.772,0,0,1,.838.735.789.789,0,0,1-.709.828c-1.6,0-3.209.009-4.814.013q-.582,0-1.165-.005a.731.731,0,0,1-.694-.742c-.015-.437-.026-.874-.027-1.311,0-1.765,0-3.53,0-5.294a.793.793,0,0,1,.481-.81.776.776,0,0,1,1.091.737C262.314,54.843,262.309,55.78,262.309,56.717Z"
+                                        transform="translate(-249.746 -49.575)" fill="#2e3a59" />
+                                </svg>
+                            </div>
+                            <div class="main__tabs-text">Lịch sử</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-11">
+                    <div class="main__exam">
+                        <!-- Heading Nhập Đề -->
+                        <div class="main__exam-header main__heading">
+                            <!-- Btn Nhập Đề -->
+                            <button class="btn btn-danger main__exam-salutatory" data-bs-toggle="modal"
+                                data-bs-target="#inputThreads">
+                                Nhập đề
+                            </button>
+                            <!-- Modal Btn Nhập Đề -->
+                            <div class="modal fade" id="inputThreads" tabindex="-1" aria-labelledby="inputThreads"
+                                aria-hidden="true">
+                                <div class="modal-dialog main__exam-modal">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Vui lòng copy đề thi dán
+                                                vào
+                                                ô bên dưới</h5>
+                                            <!-- Btn Close -->
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <textarea class="form-control" id="uploadEditor" rows="10"
+                                                    placeholder="Ví dụ: Câu 1: Nghị quyết Đại hội Đoàn TNCS Hồ Chí Minh toàn quốc lần thứ XI, nhiệm kỳ 2017-2022 đề ra phong trào hành động cách mạng gồm những nội dung nào?
+                                    A. Phong trào Xung kích phát triển kinh tế xã hội và Đồng hành cùng Thanh niên lập thân, lập nghiệp.
+                                    B. Phong trào Xung kích, sáng tạo xây dựng và bảo vệ Tổ quốc.
+                                    C. Phong trào Thanh niên tình nguyện, Tuổi trẻ sáng tạo và Tuổi trẻ xung kích bảo vệ Tổ quốc.
+                                    D. Phong trào Xung kích phát triển kinh tế xã hội, bảo vệ Tổ quốc và Đồng hành cùng Thanh niên lập thân, lập nghiệp."></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Đóng</button>
+                                            <button type="button" id="upload"
+                                                class="btn btn-danger main__exam-modal-upload"
+                                                data-bs-dismiss="modal">Upload</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Input Document -->
+                        <div class="form-floating mb-3 main__exam-input">
+                            <input type="text" class="form-control" id="floatingInput" placeholder="Tựa tài liệu">
+                            <label for="floatingInput" class="main__exam-label">Tựa tài liệu</label>
+                        </div>
+                        <!-- Content question Trắc nghiệm  -->
+                        <div class="main__exam-question">
+                            <!-- Title -->
+                            <h2 class="main__exam-question-heading">Danh sách câu hỏi trắc nghiệm</h2>
+                            <!-- List Question and Answer -->
+                            <ol class="main__question-list">
+                                <!-- <li class="main__question-item">
+                                            <div class="main__question-header">
+                                                <div class="main__question-title">
+                                                    <h3 class="main__question-name">
+                                                        Chưa có nội dung câu hỏi Chưa có nội dung câu hỏi Chưa có nội dung câu
+                                                        hỏi Chưa có nội dung câu hỏi Chưa có nội dung câu hỏi
+                                                    </h3>
+                                                </div>
+                                                <div class="main__question-direction">
+                                                    <a href="" class="btn btn-danger main__question-close"
+                                                        data-bs-target="#closeAnswe2" data-bs-toggle="modal">
+                                                        <i class="fas fa-times"></i>
+                                                    </a>
+                                                    <div class="modal modal__form show" id="closeAnswe2" tabindex="-1"
+                                                        aria-labelledby="closeAnswe" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered">
+                                                            <div class="modal-content modal__form-content">
+                                                                <div class="main__modal-body">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                                        height="120" viewBox="0 0 27 27" width="120">
+                                                                        <path
+                                                                            d="M4.6 25.925H22.5C25.2 25.925 26.8 23.022 25.6 20.6195L16.6 3.80194C15.3 1.29934 11.8 1.29934 10.5 3.80194L1.5 20.6195C0.299997 23.022 1.9 25.925 4.6 25.925Z"
+                                                                            stroke="#facea8" stroke-linecap="round"
+                                                                            stroke-miterlimit="10" stroke-width="2" />
+                                                                        <path
+                                                                            d="M13.9 18.0168H13.2C12.5 18.0168 12.6 17.4162 12.6 16.7154L11.9 9.30769C11.9 8.60696 12.5 8.00635 13.2 8.00635H13.9C14.6 8.00635 15.2 8.60696 15.2 9.30769L14.5 16.7154C14.5 17.4162 14.6 18.0168 13.9 18.0168Z"
+                                                                            fill="#facea8" />
+                                                                        <path
+                                                                            d="M13.5 21.9208C14.4389 21.9208 15.2 21.3382 15.2 20.6195C15.2 19.9008 14.4389 19.3181 13.5 19.3181C12.5611 19.3181 11.8 19.9008 11.8 20.6195C11.8 21.3382 12.5611 21.9208 13.5 21.9208Z"
+                                                                            fill="#facea8" />
+                                                                    </svg>
+                                                                    <span class="modal__form-text">
+                                                                        Câu hỏi đã được xóa
+                                                                    </span>
+                                                                </div>
+                                                                <div class="modal__form-btn">
+                                                                    <button type="button" data-bs-dismiss="modal"
+                                                                        class="btn btn-danger modal__form-btn-remove">Xóa</button>
+                                                                    <button class="btn btn-secondary"
+                                                                        data-bs-dismiss="modal">OK</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <span class="main__question-indicator">
+                                                        <i class="fas fa-chevron-up"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="main__question-body">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-floating main__question-input-content">
+                                                            <textarea class="form-control" placeholder="Leave a comment here"
+                                                                id="floatingTextarea" name="contentQuestion"
+                                                                style="height: 100px;"></textarea>
+                                                            <label for="floatingTextarea">Nội dung câu hỏi</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="main__question-form">
+                                                    <h3 class="main__form-heading">Câu trả lời</h3>
+                                                    <ul class="main__form-list">
+                                                        <li class="main__form-item row gx-4">
+                                                            <div class="col-md-1">
+                                                                <div class="main__form-checkbox">
+                                                                    <label class="main__form-checkbox-input">
+                                                                        <input type="radio" name="radio" checked="checked">
+                                                                        <span></span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-10">
+                                                                <input type="text" name="Answer"
+                                                                    class="form-control main__form-input"
+                                                                    placeholder="Nội dung câu trả lời">
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <button class="btn btn-danger main__form-btn"
+                                                                    data-bs-target="#closeQuestion1" data-bs-toggle="modal">
+                                                                    <i class="fas fa-trash"></i>
+                                                                </button>
+                                                                <div class="modal modal__form show" id="closeQuestion1"
+                                                                    tabindex="-1" aria-labelledby="closeQuestion1"
+                                                                    aria-hidden="true">
+                                                                    <div class="modal-dialog modal-dialog-centered">
+                                                                        <div class="modal-content modal__form-content">
+                                                                            <div class="main__modal-body">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                    fill="none" height="120" viewBox="0 0 27 27"
+                                                                                    width="120">
+                                                                                    <path
+                                                                                        d="M4.6 25.925H22.5C25.2 25.925 26.8 23.022 25.6 20.6195L16.6 3.80194C15.3 1.29934 11.8 1.29934 10.5 3.80194L1.5 20.6195C0.299997 23.022 1.9 25.925 4.6 25.925Z"
+                                                                                        stroke="#facea8" stroke-linecap="round"
+                                                                                        stroke-miterlimit="10"
+                                                                                        stroke-width="2" />
+                                                                                    <path
+                                                                                        d="M13.9 18.0168H13.2C12.5 18.0168 12.6 17.4162 12.6 16.7154L11.9 9.30769C11.9 8.60696 12.5 8.00635 13.2 8.00635H13.9C14.6 8.00635 15.2 8.60696 15.2 9.30769L14.5 16.7154C14.5 17.4162 14.6 18.0168 13.9 18.0168Z"
+                                                                                        fill="#facea8" />
+                                                                                    <path
+                                                                                        d="M13.5 21.9208C14.4389 21.9208 15.2 21.3382 15.2 20.6195C15.2 19.9008 14.4389 19.3181 13.5 19.3181C12.5611 19.3181 11.8 19.9008 11.8 20.6195C11.8 21.3382 12.5611 21.9208 13.5 21.9208Z"
+                                                                                        fill="#facea8" />
+                                                                                </svg>
+                                                                                <span class="modal__form-text">
+                                                                                    Bạn có chắc muốn xóa câu trả lời này?
+                                                                                </span>
+                                                                            </div>
+                                                                            <div class="modal__form-btn">
+                                                                                <button type="button"
+                                                                                    class="btn btn-danger modal__form-btn-remove-answer">Xóa</button>
+                                                                                <button class="btn btn-secondary"
+                                                                                    data-bs-dismiss="modal">Bỏ qua</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="main__form-item row gx-4">
+                                                            <div class="col-md-1">
+                                                                <div class="main__form-checkbox">
+                                                                    <label class="main__form-checkbox-input">
+                                                                        <input type="radio" name="radio">
+                                                                        <span></span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-10">
+                                                                <input type="text" class="form-control main__form-input"
+                                                                    placeholder="Nội dung câu trả lời">
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <button class="btn btn-danger main__form-btn"
+                                                                    data-bs-target="#closeQuestion2" data-bs-toggle="modal">
+                                                                    <i class="fas fa-trash"></i>
+                                                                </button>
+                                                                <div class="modal modal__form show" id="closeQuestion2"
+                                                                    tabindex="-1" aria-labelledby="closeQuestion2"
+                                                                    aria-hidden="true">
+                                                                    <div class="modal-dialog modal-dialog-centered">
+                                                                        <div class="modal-content modal__form-content">
+                                                                            <div class="main__modal-body">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                    fill="none" height="120" viewBox="0 0 27 27"
+                                                                                    width="120">
+                                                                                    <path
+                                                                                        d="M4.6 25.925H22.5C25.2 25.925 26.8 23.022 25.6 20.6195L16.6 3.80194C15.3 1.29934 11.8 1.29934 10.5 3.80194L1.5 20.6195C0.299997 23.022 1.9 25.925 4.6 25.925Z"
+                                                                                        stroke="#facea8" stroke-linecap="round"
+                                                                                        stroke-miterlimit="10"
+                                                                                        stroke-width="2" />
+                                                                                    <path
+                                                                                        d="M13.9 18.0168H13.2C12.5 18.0168 12.6 17.4162 12.6 16.7154L11.9 9.30769C11.9 8.60696 12.5 8.00635 13.2 8.00635H13.9C14.6 8.00635 15.2 8.60696 15.2 9.30769L14.5 16.7154C14.5 17.4162 14.6 18.0168 13.9 18.0168Z"
+                                                                                        fill="#facea8" />
+                                                                                    <path
+                                                                                        d="M13.5 21.9208C14.4389 21.9208 15.2 21.3382 15.2 20.6195C15.2 19.9008 14.4389 19.3181 13.5 19.3181C12.5611 19.3181 11.8 19.9008 11.8 20.6195C11.8 21.3382 12.5611 21.9208 13.5 21.9208Z"
+                                                                                        fill="#facea8" />
+                                                                                </svg>
+                                                                                <span class="modal__form-text">
+                                                                                    Bạn có chắc muốn xóa câu trả lời này?
+                                                                                </span>
+                                                                            </div>
+                                                                            <div class="modal__form-btn">
+                                                                                <button type="button"
+                                                                                    class="btn btn-danger modal__form-btn-remove-answer">Xóa</button>
+                                                                                <button class="btn btn-secondary"
+                                                                                    data-bs-dismiss="modal">Bỏ qua</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="main__form-item row gx-4">
+                                                            <div class="col-md-1">
+                                                                <div class="main__form-checkbox">
+                                                                    <label class="main__form-checkbox-input">
+                                                                        <input type="radio" name="radio">
+                                                                        <span></span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-10">
+                                                                <input type="text" class="form-control main__form-input"
+                                                                    placeholder="Nội dung câu trả lời">
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <button class="btn btn-danger main__form-btn"
+                                                                    data-bs-target="#closeQuestion3" data-bs-toggle="modal">
+                                                                    <i class="fas fa-trash"></i>
+                                                                </button>
+                                                                <div class="modal modal__form show" id="closeQuestion3"
+                                                                    tabindex="-1" aria-labelledby="closeQuestion3"
+                                                                    aria-hidden="true">
+                                                                    <div class="modal-dialog modal-dialog-centered">
+                                                                        <div class="modal-content modal__form-content">
+                                                                            <div class="main__modal-body">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                    fill="none" height="120" viewBox="0 0 27 27"
+                                                                                    width="120">
+                                                                                    <path
+                                                                                        d="M4.6 25.925H22.5C25.2 25.925 26.8 23.022 25.6 20.6195L16.6 3.80194C15.3 1.29934 11.8 1.29934 10.5 3.80194L1.5 20.6195C0.299997 23.022 1.9 25.925 4.6 25.925Z"
+                                                                                        stroke="#facea8" stroke-linecap="round"
+                                                                                        stroke-miterlimit="10"
+                                                                                        stroke-width="2" />
+                                                                                    <path
+                                                                                        d="M13.9 18.0168H13.2C12.5 18.0168 12.6 17.4162 12.6 16.7154L11.9 9.30769C11.9 8.60696 12.5 8.00635 13.2 8.00635H13.9C14.6 8.00635 15.2 8.60696 15.2 9.30769L14.5 16.7154C14.5 17.4162 14.6 18.0168 13.9 18.0168Z"
+                                                                                        fill="#facea8" />
+                                                                                    <path
+                                                                                        d="M13.5 21.9208C14.4389 21.9208 15.2 21.3382 15.2 20.6195C15.2 19.9008 14.4389 19.3181 13.5 19.3181C12.5611 19.3181 11.8 19.9008 11.8 20.6195C11.8 21.3382 12.5611 21.9208 13.5 21.9208Z"
+                                                                                        fill="#facea8" />
+                                                                                </svg>
+                                                                                <span class="modal__form-text">
+                                                                                    Bạn có chắc muốn xóa câu trả lời này?
+                                                                                </span>
+                                                                            </div>
+                                                                            <div class="modal__form-btn">
+                                                                                <button type="button"
+                                                                                    class="btn btn-danger modal__form-btn-remove-answer">Xóa</button>
+                                                                                <button class="btn btn-secondary"
+                                                                                    data-bs-dismiss="modal">Bỏ qua</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="main__form-item row gx-4">
+                                                            <div class="col-md-1">
+                                                                <div class="main__form-checkbox">
+                                                                    <label class="main__form-checkbox-input">
+                                                                        <input type="radio" name="radio">
+                                                                        <span></span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-10">
+                                                                <input type="text" class="form-control main__form-input"
+                                                                    placeholder="Nội dung câu trả lời">
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <button class="btn btn-danger main__form-btn"
+                                                                    data-bs-target="#closeQuestion4" data-bs-toggle="modal">
+                                                                    <i class="fas fa-trash"></i>
+                                                                </button>
+                                                                <div class="modal modal__form show" id="closeQuestion4"
+                                                                    tabindex="-1" aria-labelledby="closeQuestion4"
+                                                                    aria-hidden="true">
+                                                                    <div class="modal-dialog modal-dialog-centered">
+                                                                        <div class="modal-content modal__form-content">
+                                                                            <div class="main__modal-body">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                    fill="none" height="120" viewBox="0 0 27 27"
+                                                                                    width="120">
+                                                                                    <path
+                                                                                        d="M4.6 25.925H22.5C25.2 25.925 26.8 23.022 25.6 20.6195L16.6 3.80194C15.3 1.29934 11.8 1.29934 10.5 3.80194L1.5 20.6195C0.299997 23.022 1.9 25.925 4.6 25.925Z"
+                                                                                        stroke="#facea8" stroke-linecap="round"
+                                                                                        stroke-miterlimit="10"
+                                                                                        stroke-width="2" />
+                                                                                    <path
+                                                                                        d="M13.9 18.0168H13.2C12.5 18.0168 12.6 17.4162 12.6 16.7154L11.9 9.30769C11.9 8.60696 12.5 8.00635 13.2 8.00635H13.9C14.6 8.00635 15.2 8.60696 15.2 9.30769L14.5 16.7154C14.5 17.4162 14.6 18.0168 13.9 18.0168Z"
+                                                                                        fill="#facea8" />
+                                                                                    <path
+                                                                                        d="M13.5 21.9208C14.4389 21.9208 15.2 21.3382 15.2 20.6195C15.2 19.9008 14.4389 19.3181 13.5 19.3181C12.5611 19.3181 11.8 19.9008 11.8 20.6195C11.8 21.3382 12.5611 21.9208 13.5 21.9208Z"
+                                                                                        fill="#facea8" />
+                                                                                </svg>
+                                                                                <span class="modal__form-text">
+                                                                                    Bạn có chắc muốn xóa câu trả lời này?
+                                                                                </span>
+                                                                            </div>
+                                                                            <div class="modal__form-btn">
+                                                                                <button type="button"
+                                                                                    class="btn btn-danger modal__form-btn-remove-answer">Xóa</button>
+                                                                                <button class="btn btn-secondary"
+                                                                                    data-bs-dismiss="modal">Bỏ qua</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <button class="btn btn-danger main__question-body-btn">
+                                                    <i class="fas fa-plus main__exam-question-btn-add"></i>
+                                                    Thêm câu trả lời
+                                                </button>
+                                            </div>
+                                        </li> -->
+                                <!-- <li class="main__question-item">
+                                            <div class="main__question-header">
+                                                <div class="main__question-title">
+                                                    <h3 class="main__question-name">
+                                                        Chưa có nội dung câu hỏi
+                                                    </h3>
+                                                </div>
+                                                <div class="main__question-direction">
+                                                    <a href="" class="btn btn-danger main__question-close"
+                                                        data-bs-target="#closeAnswe1" data-bs-toggle="modal">
+                                                        <i class="fas fa-times"></i>
+                                                    </a>
+                                                    <div class="modal modal__form show" id="closeAnswe1" tabindex="-1"
+                                                        aria-labelledby="closeAnswe" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered">
+                                                            <div class="modal-content modal__form-content">
+                                                                <div class="main__modal-body">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                                        height="120" viewBox="0 0 27 27" width="120">
+                                                                        <path
+                                                                            d="M4.6 25.925H22.5C25.2 25.925 26.8 23.022 25.6 20.6195L16.6 3.80194C15.3 1.29934 11.8 1.29934 10.5 3.80194L1.5 20.6195C0.299997 23.022 1.9 25.925 4.6 25.925Z"
+                                                                            stroke="#facea8" stroke-linecap="round"
+                                                                            stroke-miterlimit="10" stroke-width="2" />
+                                                                        <path
+                                                                            d="M13.9 18.0168H13.2C12.5 18.0168 12.6 17.4162 12.6 16.7154L11.9 9.30769C11.9 8.60696 12.5 8.00635 13.2 8.00635H13.9C14.6 8.00635 15.2 8.60696 15.2 9.30769L14.5 16.7154C14.5 17.4162 14.6 18.0168 13.9 18.0168Z"
+                                                                            fill="#facea8" />
+                                                                        <path
+                                                                            d="M13.5 21.9208C14.4389 21.9208 15.2 21.3382 15.2 20.6195C15.2 19.9008 14.4389 19.3181 13.5 19.3181C12.5611 19.3181 11.8 19.9008 11.8 20.6195C11.8 21.3382 12.5611 21.9208 13.5 21.9208Z"
+                                                                            fill="#facea8" />
+                                                                    </svg>
+                                                                    <span class="modal__form-text">
+                                                                        Bạn có chắc muốn xóa câu hỏi này?
+                                                                    </span>
+                                                                </div>
+                                                                <div class="modal__form-btn">
+                                                                    <button type="button" data-bs-dismiss="modal"
+                                                                        class="btn btn-danger modal__form-btn-remove">Xóa</button>
+                                                                    <button class="btn btn-secondary" data-bs-dismiss="modal">Bỏ
+                                                                        qua</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <span class="main__question-indicator">
+                                                        <i class="fas fa-chevron-up"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="main__question-body">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="form-floating main__question-input-content">
+                                                            <textarea class="form-control" placeholder="Leave a comment here"
+                                                                id="floatingTextarea" style="height: 100px;"></textarea>
+                                                            <label for="floatingTextarea">Nội dung câu hỏi</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="main__question-form">
+                                                    <h3 class="main__form-heading">Câu trả lời</h3>
+                                                    <ul class="main__form-list">
+                                                        <li class="main__form-item row gx-4">
+                                                            <div class="col-md-1">
+                                                                <div class="main__form-checkbox">
+                                                                    <label class="main__form-checkbox-input">
+                                                                        <input type="radio" name="radi" checked="checked">
+                                                                        <span></span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-10">
+                                                                <input type="text" class="form-control main__form-input"
+                                                                    placeholder="Nội dung câu trả lời">
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <button class="btn btn-danger main__form-btn"
+                                                                    data-bs-target="#closeQuestion1" data-bs-toggle="modal">
+                                                                    <i class="fas fa-trash"></i>
+                                                                </button>
+                                                                <div class="modal modal__form show" id="closeQuestion1"
+                                                                    tabindex="-1" aria-labelledby="closeQuestion1"
+                                                                    aria-hidden="true">
+                                                                    <div class="modal-dialog modal-dialog-centered">
+                                                                        <div class="modal-content modal__form-content">
+                                                                            <div class="main__modal-body">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                    fill="none" height="120" viewBox="0 0 27 27"
+                                                                                    width="120">
+                                                                                    <path
+                                                                                        d="M4.6 25.925H22.5C25.2 25.925 26.8 23.022 25.6 20.6195L16.6 3.80194C15.3 1.29934 11.8 1.29934 10.5 3.80194L1.5 20.6195C0.299997 23.022 1.9 25.925 4.6 25.925Z"
+                                                                                        stroke="#facea8" stroke-linecap="round"
+                                                                                        stroke-miterlimit="10"
+                                                                                        stroke-width="2" />
+                                                                                    <path
+                                                                                        d="M13.9 18.0168H13.2C12.5 18.0168 12.6 17.4162 12.6 16.7154L11.9 9.30769C11.9 8.60696 12.5 8.00635 13.2 8.00635H13.9C14.6 8.00635 15.2 8.60696 15.2 9.30769L14.5 16.7154C14.5 17.4162 14.6 18.0168 13.9 18.0168Z"
+                                                                                        fill="#facea8" />
+                                                                                    <path
+                                                                                        d="M13.5 21.9208C14.4389 21.9208 15.2 21.3382 15.2 20.6195C15.2 19.9008 14.4389 19.3181 13.5 19.3181C12.5611 19.3181 11.8 19.9008 11.8 20.6195C11.8 21.3382 12.5611 21.9208 13.5 21.9208Z"
+                                                                                        fill="#facea8" />
+                                                                                </svg>
+                                                                                <span class="modal__form-text">
+                                                                                    Bạn có chắc muốn xóa câu trả lời này?
+                                                                                </span>
+                                                                            </div>
+                                                                            <div class="modal__form-btn">
+                                                                                <button type="button"
+                                                                                    class="btn btn-danger modal__form-btn-remove-answer">Xóa</button>
+                                                                                <button class="btn btn-secondary"
+                                                                                    data-bs-dismiss="modal">Bỏ qua</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="main__form-item row gx-4">
+                                                            <div class="col-md-1">
+                                                                <div class="main__form-checkbox">
+                                                                    <label class="main__form-checkbox-input">
+                                                                        <input type="radio" name="radi">
+                                                                        <span></span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-10">
+                                                                <input type="text" class="form-control main__form-input"
+                                                                    placeholder="Nội dung câu trả lời">
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <button class="btn btn-danger main__form-btn"
+                                                                    data-bs-target="#closeQuestion2" data-bs-toggle="modal">
+                                                                    <i class="fas fa-trash"></i>
+                                                                </button>
+                                                                <div class="modal modal__form show" id="closeQuestion2"
+                                                                    tabindex="-1" aria-labelledby="closeQuestion2"
+                                                                    aria-hidden="true">
+                                                                    <div class="modal-dialog modal-dialog-centered">
+                                                                        <div class="modal-content modal__form-content">
+                                                                            <div class="main__modal-body">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                    fill="none" height="120" viewBox="0 0 27 27"
+                                                                                    width="120">
+                                                                                    <path
+                                                                                        d="M4.6 25.925H22.5C25.2 25.925 26.8 23.022 25.6 20.6195L16.6 3.80194C15.3 1.29934 11.8 1.29934 10.5 3.80194L1.5 20.6195C0.299997 23.022 1.9 25.925 4.6 25.925Z"
+                                                                                        stroke="#facea8" stroke-linecap="round"
+                                                                                        stroke-miterlimit="10"
+                                                                                        stroke-width="2" />
+                                                                                    <path
+                                                                                        d="M13.9 18.0168H13.2C12.5 18.0168 12.6 17.4162 12.6 16.7154L11.9 9.30769C11.9 8.60696 12.5 8.00635 13.2 8.00635H13.9C14.6 8.00635 15.2 8.60696 15.2 9.30769L14.5 16.7154C14.5 17.4162 14.6 18.0168 13.9 18.0168Z"
+                                                                                        fill="#facea8" />
+                                                                                    <path
+                                                                                        d="M13.5 21.9208C14.4389 21.9208 15.2 21.3382 15.2 20.6195C15.2 19.9008 14.4389 19.3181 13.5 19.3181C12.5611 19.3181 11.8 19.9008 11.8 20.6195C11.8 21.3382 12.5611 21.9208 13.5 21.9208Z"
+                                                                                        fill="#facea8" />
+                                                                                </svg>
+                                                                                <span class="modal__form-text">
+                                                                                    Bạn có chắc muốn xóa câu trả lời này?
+                                                                                </span>
+                                                                            </div>
+                                                                            <div class="modal__form-btn">
+                                                                                <button type="button"
+                                                                                    class="btn btn-danger modal__form-btn-remove-answer">Xóa</button>
+                                                                                <button class="btn btn-secondary"
+                                                                                    data-bs-dismiss="modal">Bỏ qua</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="main__form-item row gx-4">
+                                                            <div class="col-md-1">
+                                                                <div class="main__form-checkbox">
+                                                                    <label class="main__form-checkbox-input">
+                                                                        <input type="radio" name="radi">
+                                                                        <span></span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-10">
+                                                                <input type="text" class="form-control main__form-input"
+                                                                    placeholder="Nội dung câu trả lời">
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <button class="btn btn-danger main__form-btn"
+                                                                    data-bs-target="#closeQuestion3" data-bs-toggle="modal">
+                                                                    <i class="fas fa-trash"></i>
+                                                                </button>
+                                                                <div class="modal modal__form show" id="closeQuestion3"
+                                                                    tabindex="-1" aria-labelledby="closeQuestion3"
+                                                                    aria-hidden="true">
+                                                                    <div class="modal-dialog modal-dialog-centered">
+                                                                        <div class="modal-content modal__form-content">
+                                                                            <div class="main__modal-body">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                    fill="none" height="120" viewBox="0 0 27 27"
+                                                                                    width="120">
+                                                                                    <path
+                                                                                        d="M4.6 25.925H22.5C25.2 25.925 26.8 23.022 25.6 20.6195L16.6 3.80194C15.3 1.29934 11.8 1.29934 10.5 3.80194L1.5 20.6195C0.299997 23.022 1.9 25.925 4.6 25.925Z"
+                                                                                        stroke="#facea8" stroke-linecap="round"
+                                                                                        stroke-miterlimit="10"
+                                                                                        stroke-width="2" />
+                                                                                    <path
+                                                                                        d="M13.9 18.0168H13.2C12.5 18.0168 12.6 17.4162 12.6 16.7154L11.9 9.30769C11.9 8.60696 12.5 8.00635 13.2 8.00635H13.9C14.6 8.00635 15.2 8.60696 15.2 9.30769L14.5 16.7154C14.5 17.4162 14.6 18.0168 13.9 18.0168Z"
+                                                                                        fill="#facea8" />
+                                                                                    <path
+                                                                                        d="M13.5 21.9208C14.4389 21.9208 15.2 21.3382 15.2 20.6195C15.2 19.9008 14.4389 19.3181 13.5 19.3181C12.5611 19.3181 11.8 19.9008 11.8 20.6195C11.8 21.3382 12.5611 21.9208 13.5 21.9208Z"
+                                                                                        fill="#facea8" />
+                                                                                </svg>
+                                                                                <span class="modal__form-text">
+                                                                                    Bạn có chắc muốn xóa câu trả lời này?
+                                                                                </span>
+                                                                            </div>
+                                                                            <div class="modal__form-btn">
+                                                                                <button type="button"
+                                                                                    class="btn btn-danger modal__form-btn-remove-answer">Xóa</button>
+                                                                                <button class="btn btn-secondary"
+                                                                                    data-bs-dismiss="modal">Bỏ qua</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="main__form-item row gx-4">
+                                                            <div class="col-md-1">
+                                                                <div class="main__form-checkbox">
+                                                                    <label class="main__form-checkbox-input">
+                                                                        <input type="radio" name="radi">
+                                                                        <span></span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-10">
+                                                                <input type="text" class="form-control main__form-input"
+                                                                    placeholder="Nội dung câu trả lời">
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <button class="btn btn-danger main__form-btn"
+                                                                    data-bs-target="#closeQuestion4" data-bs-toggle="modal">
+                                                                    <i class="fas fa-trash"></i>
+                                                                </button>
+                                                                <div class="modal modal__form show" id="closeQuestion4"
+                                                                    tabindex="-1" aria-labelledby="closeQuestion4"
+                                                                    aria-hidden="true">
+                                                                    <div class="modal-dialog modal-dialog-centered">
+                                                                        <div class="modal-content modal__form-content">
+                                                                            <div class="main__modal-body">
+                                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                    fill="none" height="120" viewBox="0 0 27 27"
+                                                                                    width="120">
+                                                                                    <path
+                                                                                        d="M4.6 25.925H22.5C25.2 25.925 26.8 23.022 25.6 20.6195L16.6 3.80194C15.3 1.29934 11.8 1.29934 10.5 3.80194L1.5 20.6195C0.299997 23.022 1.9 25.925 4.6 25.925Z"
+                                                                                        stroke="#facea8" stroke-linecap="round"
+                                                                                        stroke-miterlimit="10"
+                                                                                        stroke-width="2" />
+                                                                                    <path
+                                                                                        d="M13.9 18.0168H13.2C12.5 18.0168 12.6 17.4162 12.6 16.7154L11.9 9.30769C11.9 8.60696 12.5 8.00635 13.2 8.00635H13.9C14.6 8.00635 15.2 8.60696 15.2 9.30769L14.5 16.7154C14.5 17.4162 14.6 18.0168 13.9 18.0168Z"
+                                                                                        fill="#facea8" />
+                                                                                    <path
+                                                                                        d="M13.5 21.9208C14.4389 21.9208 15.2 21.3382 15.2 20.6195C15.2 19.9008 14.4389 19.3181 13.5 19.3181C12.5611 19.3181 11.8 19.9008 11.8 20.6195C11.8 21.3382 12.5611 21.9208 13.5 21.9208Z"
+                                                                                        fill="#facea8" />
+                                                                                </svg>
+                                                                                <span class="modal__form-text">
+                                                                                    Bạn có chắc muốn xóa câu trả lời này?
+                                                                                </span>
+                                                                            </div>
+                                                                            <div class="modal__form-btn">
+                                                                                <button type="button"
+                                                                                    class="btn btn-danger modal__form-btn-remove-answer">Xóa</button>
+                                                                                <button class="btn btn-secondary"
+                                                                                    data-bs-dismiss="modal">Bỏ qua</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <button class="btn btn-danger main__question-body-btn">
+                                                    <i class="fas fa-plus main__exam-question-btn-add"></i>
+                                                    Thêm câu trả lời
+                                                </button>
+                                            </div>
+                                        </li> -->
+                            </ol>
+                            <!-- Btn Add Question -->
+                            <div class="main__exam-question-btn">
+                                <button id="addQuestion" class="btn btn-danger">
+                                    <i class="fas fa-plus main__exam-question-btn-add"></i>
+                                    Thêm câu hỏi
+                                </button>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- Content question Tự luận  -->
+                        <div class="main__exam-question">
+                            <h2 class="main__exam-question-heading">Danh sách câu hỏi tự luận</h2>
+                            <ol class="main__sentence-list">
+                                <!-- <li class="main__sentence-item">
+                                            <div class="main__question-header">
+                                                <div class="main__question-title">
+                                                    <h3 class="main__question-name">
+                                                        Nội dung câu tự luận
+                                                    </h3>
+                                                </div>
+                                                <div class="main__question-direction">
+                                                    <a href="" class="btn btn-danger main__question-close"
+                                                        data-bs-target="#sentence2" data-bs-toggle="modal">
+                                                        <i class="fas fa-times"></i>
+                                                    </a>
+                                                    <div class="modal modal__form show" id="sentence2" tabindex="-1"
+                                                        aria-labelledby="sentence" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered">
+                                                            <div class="modal-content modal__form-content">
+                                                                <div class="main__modal-body">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                                        height="120" viewBox="0 0 27 27" width="120">
+                                                                        <path
+                                                                            d="M4.6 25.925H22.5C25.2 25.925 26.8 23.022 25.6 20.6195L16.6 3.80194C15.3 1.29934 11.8 1.29934 10.5 3.80194L1.5 20.6195C0.299997 23.022 1.9 25.925 4.6 25.925Z"
+                                                                            stroke="#facea8" stroke-linecap="round"
+                                                                            stroke-miterlimit="10" stroke-width="2" />
+                                                                        <path
+                                                                            d="M13.9 18.0168H13.2C12.5 18.0168 12.6 17.4162 12.6 16.7154L11.9 9.30769C11.9 8.60696 12.5 8.00635 13.2 8.00635H13.9C14.6 8.00635 15.2 8.60696 15.2 9.30769L14.5 16.7154C14.5 17.4162 14.6 18.0168 13.9 18.0168Z"
+                                                                            fill="#facea8" />
+                                                                        <path
+                                                                            d="M13.5 21.9208C14.4389 21.9208 15.2 21.3382 15.2 20.6195C15.2 19.9008 14.4389 19.3181 13.5 19.3181C12.5611 19.3181 11.8 19.9008 11.8 20.6195C11.8 21.3382 12.5611 21.9208 13.5 21.9208Z"
+                                                                            fill="#facea8" />
+                                                                    </svg>
+                                                                    <span class="modal__form-text">
+                                                                        Bạn có muốn xóa câu tự luận này?
+                                                                    </span>
+                                                                </div>
+                                                                <div class="modal__form-btn">
+                                                                    <button type="button" data-bs-dismiss="modal"
+                                                                        class="btn btn-danger modal__form-btn-remove">Xóa</button>
+                                                                    <button class="btn btn-secondary" data-bs-dismiss="modal">Bỏ
+                                                                        qua</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <span class="main__question-indicator">
+                                                        <i class="fas fa-chevron-up"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="main__question-body">
+                                                <div class="col-md-12">
+                                                    <div class="form-floating main__question-input-content">
+                                                        <textarea class="form-control" placeholder="Leave a comment here"
+                                                            id="floatingTextarea" name="contentQuestion"
+                                                            style="height: 140px;"></textarea>
+                                                        <label for="floatingTextarea">Nội dung câu hỏi</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li> -->
+                            </ol>
+                            <div class="main__exam-question-btn">
+                                <button id="addSentence" class="btn btn-danger">
+                                    <i class="fas fa-plus main__exam-question-btn-add"></i>
+                                    Thêm câu tự luận
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Btn Save -->
+                        <button class="btn btn-danger main__btn" type="save">
+                            Lưu
+                        </button>
+                        <!-- data-bs-toggle="modal" data-bs-target="#staticBackdrop" -->
+                        <!-- Modal Btn Save-->
+                        <!-- <div class="modal fade" id="staticBackdrop" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content main__modal-content">
+                                    <div class="main__modal-body">
+                                        <img src="./assets/img/cross.png" alt="" class="main__modal-img">
+                                        <span class="main__modal-text">Không có câu hỏi nào</span>
+                                    </div>
+                                    <div class="main__modal-btn">
+                                        <button type="button" class="btn btn-info" data-bs-dismiss="modal">Ok</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <!-- </form> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Main -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script> -->
+    <script src="./assets/js/main.js"></script>
+    <!-- <script src="./assets/js/test.js"></script> -->
+</body>
+
+</html>

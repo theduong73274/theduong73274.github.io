@@ -1,0 +1,203 @@
+.contest {
+    &__banner {
+        margin: 1px 10px 0;
+        position: relative;
+        &-img {
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            width: 100%;
+        }
+        &-text {
+            position: absolute;
+            top: 40%;
+            left: 20%;
+            transform: translateY(-50%);
+            & > h3 {
+                text-align: center;
+                font-size: 3.9rem;
+                line-height: 58px;
+                & > span {
+                    display: block;
+                    font-family: $font-contest;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+    &__main {
+        padding: 80px 0 44px;
+    }
+    &__info {
+        font-family: $font-contest;
+        text-transform: uppercase;
+        .contest__box {
+            @include flexBox(both);
+            height: 100%;
+            border-radius: 4px;
+            padding: 18px;
+            box-shadow: 0px 0px 6px #cfcece;
+            background-color: $color-red;
+            &:hover {
+                background-color: #fd6254;
+            }
+            &-link {
+                @include flexBox(both);
+                color: #fff;
+                cursor: pointer;
+                & > i {
+                    font-size: 2.9rem;
+                    margin-left: 8px;
+                }
+            }
+            &-text {
+                text-align: center;
+                font-size: 3rem;
+                font-weight: 700;
+                line-height: 36px;
+            }
+        }
+
+        .modal__form {
+            &.hide {
+                animation: swal2-hide;
+            }
+            &.show {
+                animation: swal2-show 0.3s;
+            }
+            &-content {
+                padding: 14px 0 20px;
+                border-radius: 8px;
+            }
+            & .modal-header {
+                padding: 0 22px 0 26px;
+                border: 0;
+                & h5 {
+                    font-size: 2rem;
+                }
+                & > button {
+                    font-size: 1.9rem;
+                }
+                & .modal-title-heading {
+                    width: 100%;
+                    text-align: center;
+                    margin-left: 16px;
+                }
+            }
+            & .main__modal-body {
+                padding: 0 26px;
+            }
+            &-text {
+                text-align: left;
+                text-transform: none;
+                font-size: 2.1rem;
+                display: block;
+                padding: 12px 0 20px 0px;
+            }
+            &-btn {
+                @include flexBox(ver);
+                & > button {
+                    font-size: 1.8rem;
+                    padding: 6px 28px;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+    &__time {
+        color: $color-red;
+        @include flexBox(hor);
+        justify-content: space-evenly;
+        &-count {
+            &-list {
+                @include flexBox(both);
+            }
+            &-item {
+                padding: 0 6px;
+                line-height: 22px;
+            }
+        }
+        &-end,
+        &-start {
+            border: 2px solid $color-red;
+            text-align: center;
+            width: 22%;
+        }
+        &-count {
+            border: 2px solid $color-red;
+            text-align: center;
+            width: 50%;
+        }
+        &-top {
+            border-bottom: 2px solid $color-red;
+            font-size: 2.1rem;
+            padding: 18px 8px 12px;
+        }
+        &-bottom {
+            font-size: 1.9rem;
+            padding: 10px 8px;
+        }
+        &-hours {
+            margin-bottom: 6px;
+        }
+    }
+    &__statistical {
+        font-family: $font-contest;
+        padding: 60px 0 0px;
+        &-content {
+            margin: 0 50px;
+        }
+        &-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #65656a;
+            text-align: center;
+            padding: 16px 4px;
+            border-bottom: 2px solid $color-red;
+        }
+        &-text {
+            font-family: $main-font;
+            font-weight: 400;
+            font-size: 1.8rem;
+            padding-top: 24px;
+        }
+        &-header {
+            @include flexBox(hor);
+            justify-content: space-evenly;
+        }
+        &-list {
+            counter-reset: li;
+            margin: 26px 0;
+        }
+        &-item {
+            counter-increment: li;
+            margin: 20px 0 24px;
+            &-text {
+                position: relative;
+                display: block;
+                font-size: 2rem;
+                padding: 10px 16px 10px 80px;
+                &::before {
+                    position: absolute;
+                    left: 13px;
+                    top: -1px;
+                    height: 35px;
+                    width: 40px;
+                    line-height: 40px;
+                    text-align: center;
+                    font-size: 2.6rem;
+                    background-color: #f1d809;
+                    font-weight: 600;
+                    content: counter(li) "" " ";
+                }
+                &::after {
+                    position: absolute;
+                    content: "";
+                    left: 12px;
+                    bottom: -2px;
+                    border-top: 8px solid #f1d809;
+                    border-left: 21px solid transparent;
+                    border-right: 21px solid transparent;
+                }
+            }
+        }
+    }
+}

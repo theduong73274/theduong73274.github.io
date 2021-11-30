@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đề thi thành đoàn Hải Phòng</title>
+    <link rel="icon" href="./assets/img/saovang.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <!-- Begin Header -->
+    <header class="header">
+        <div class="container-fluid">
+            <div class="header__main">
+                <div class="header__logo">
+                    <img src="./assets/img/header.png" alt="" class="header__logo-img">
+                </div>
+
+                <div class="dropdown">
+                    <div class="header__login dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="./assets/img/user.png" alt="" class="header__login-avatar">
+                        <span class="header__login-name">Thần Điêu</span>
+                    </div>
+                    <ul class="dropdown-menu header__login-list">
+                        <li class="header__login-item">
+                            <a href="#" class="header__login-link dropdown-item">Trang chủ</a>
+                        </li>
+                        <li class="header__login-item">
+                            <a href="#" class="header__login-link dropdown-item">Thông tin cá nhân</a>
+                        </li>
+                        <li class="header__login-item">
+                            <a href="#" class="header__login-link dropdown-item">Lịch sử làm bài</a>
+                        </li>
+                        <li class="header__login-item">
+                            <a href="#" class="header__login-link dropdown-item">Đăng xuất</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Begin Main -->
+    <section class="main">
+        <div class="container-fluid">
+            <div class="row gx-3">
+                <div class="col-md-1">
+                    <div class="main__tabs">
+                        <div class="main__tabs-item ">
+                            <div class="main__tabs-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="24" height="24" viewBox="0 0 24 24">
+                                    <defs>
+                                        <rect id="rect-1" width="24" height="24" x="0" y="0" rx="0" ry="0" />
+                                        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+                                            <rect width="24" height="24" x="0" y="0" fill="black" />
+                                            <use fill="white" xlink:href="#rect-1" />
+                                        </mask>
+                                    </defs>
+                                    <g>
+                                        <use fill="none" xlink:href="#rect-1" />
+                                        <g mask="url(#mask-2)">
+                                            <path fill="rgb(46,58,89)" fill-rule="evenodd"
+                                                d="M7 7c0 2.75699997 2.24300003 5 5 5s5-2.24300003 5-5-2.24300003-5-5-5-5 2.24300003-5 5zm2 0c0-1.65400028 1.34599972-3 3-3s3 1.34599972 3 3-1.34599972 3-3 3-3-1.34599972-3-3zm5 6c3.85900116 0 7 3.14099884 7 7v1h-2v-1c0-2.75699997-2.24300003-5-5-5h-4c-2.75699997 0-5 2.24300003-5 5v1H3v-1c0-3.85900116 3.14000034-7 7-7h4z" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="main__tabs-text">Tài khoản</div>
+                        </div>
+                        <div class="main__tabs-item">
+                            <div class="main__tabs-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="24" height="24" viewBox="0 0 24 24">
+                                    <defs>
+                                        <rect id="rect-1" width="24" height="24" x="0" y="0" rx="0" ry="0" />
+                                        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+                                            <rect width="24" height="24" x="0" y="0" fill="black" />
+                                            <use fill="white" xlink:href="#rect-1" />
+                                        </mask>
+                                    </defs>
+                                    <g>
+                                        <use fill="none" xlink:href="#rect-1" />
+                                        <g mask="url(#mask-2)">
+                                            <path fill="rgb(46,58,89)" fill-rule="evenodd"
+                                                d="M5 3c-1.10300016 0-2 .89699984-2 2v14c0 1.10300064.89699984 2 2 2h8c.13099957 0 .25999928-.02600098.38099957-.07600021.12100029-.04999924.23200035-.1229992.3260002-.21699906l7.00000096-7.00000095c.08600044-.08600044.14699936-.18700028.19599915-.29300022.01399994-.02999974.02200126-.06099987.03300094-.09299946.02799988-.08399963.04599953-.17000008.0509987-.25899983C20.98900031 13.04100037 21 13.02099991 21 13V5c0-1.10300016-.89699936-2-2-2H5zm14 2v7h-6c-.5529995 0-1 .44799995-1 1v6H5V5h14zm-1.41399956 9H14v3.58600044L17.58600044 14z" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="main__tabs-text">Tài liệu</div>
+                        </div>
+                        <div class="main__tabs-item active">
+                            <div class="main__tabs-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="24" height="24" viewBox="0 0 24 24">
+                                    <defs>
+                                        <rect id="rect-1" width="24" height="24" x="0" y="0" rx="0" ry="0" />
+                                        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+                                            <rect width="24" height="24" x="0" y="0" fill="black" />
+                                            <use fill="white" xlink:href="#rect-1" />
+                                        </mask>
+                                    </defs>
+                                    <g>
+                                        <use fill="none" xlink:href="#rect-1" />
+                                        <g mask="url(#mask-2)">
+                                            <path fill="rgb(46,58,89)" fill-rule="evenodd"
+                                                d="M8 2h12c1.10300064 0 2 .89699984 2 2v12c0 1.10300064-.89699936 2-2 2H8c-1.10300016 0-2-.89699936-2-2V4c0-1.10300016.89699984-2 2-2zm0 14V4h12l.0020008 12H8zm9.29296875-9.56048584l1.41400146 1.41399956-5.70700168 5.70699882-3.70699978-3.70699882 1.41399956-1.41399956 2.29300022 2.29300022 4.29300022-4.29300022zM2 20V8h2v12h12v2H4c-1.10300016 0-2-.89699936-2-2z" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="main__tabs-text">Đề thi</div>
+                        </div>
+                        <div class="main__tabs-item">
+                            <div class="main__tabs-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="24" height="24" viewBox="0 0 24 24">
+                                    <defs>
+                                        <rect id="rect-1" width="24" height="24" x="0" y="0" />
+                                        <rect id="rect-2" width="24" height="24" x="0" y="0" rx="0" ry="0" />
+                                        <mask id="mask-3" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+                                            <rect width="24" height="24" x="0" y="0" fill="black" />
+                                            <use fill="white" xlink:href="#rect-2" />
+                                        </mask>
+                                    </defs>
+                                    <g>
+                                        <use fill="none" xlink:href="#rect-2" />
+                                        <g mask="url(#mask-3)">
+                                            <path fill="rgb(46,58,89)" fill-rule="evenodd"
+                                                d="M8 12c2.20913887 0 4-1.79086113 4-4 0-2.20913887-1.79086113-4-4-4-2.20913887 0-4 1.79086113-4 4 0 2.20913887 1.79086113 4 4 4zm0-2c1.10456944 0 2-.89543056 2-2 0-1.10456944-.89543056-2-2-2-1.10456944 0-2 .89543056-2 2 0 1.10456944.89543056 2 2 2zm11-2v3h3v2h-3v3h-2v-3h-3v-2h3V8h2zM8 13c3.3137083 0 6 2.6862917 6 6h-2c0-2.20913887-1.79086113-4-4-4-2.20913887 0-4 1.79086113-4 4H2c0-3.3137083 2.6862917-6 6-6z" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="main__tabs-text">Nhóm</div>
+                        </div>
+                        <div class="main__tabs-item">
+                            <div class="main__tabs-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="22" height="37" viewBox="0 0 22 37">
+                                    <defs>
+                                        <rect id="rect-1" width="13" height="13" x="0" y="0" />
+                                        <rect id="rect-2" width="13" height="13" x="0" y="0" rx="0" ry="0" />
+                                        <mask id="mask-3" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+                                            <rect width="22" height="37" x="0" y="0" fill="black" />
+                                            <use fill="white" xlink:href="#rect-2" />
+                                        </mask>
+                                        <rect id="rect-5" width="20" height="33" x="0" y="0" />
+                                        <rect id="rect-6" width="20" height="33" x="0" y="0" rx="0" ry="0" />
+                                        <mask id="mask-7" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+                                            <rect width="22" height="37" x="0" y="0" fill="black" />
+                                            <use fill="white" xlink:href="#rect-6" />
+                                        </mask>
+                                    </defs>
+                                    <g>
+                                        <g transform="translate(4 11)">
+                                            <use fill="none" xlink:href="#rect-2" />
+                                            <g mask="url(#mask-3)">
+                                                <path fill="rgb(46,58,89)" fill-rule="evenodd"
+                                                    d="M11.56308746 2.58596706c.2115345.21153403.2115345.55449868 9.6e-7.7660321l-1.14905834 1.1490574-1.91508103-1.91508044L9.6480074 1.43691826c.21153355-.21153355.55449772-.21153355.76603222 9.5e-7l1.14904785 1.14904785zm-9.7080636 7.97053373l.1326598-1.45925855 6.12824976-6.12825 1.91508102 1.9150809-6.12825012 6.12824964-1.4592588.13265992c-.3368814.03062534-.61910724-.25160027-.58848166-.5884819z" />
+                                            </g>
+                                        </g>
+                                        <g transform="translate(1 1)">
+                                            <use fill="none" xlink:href="#rect-6" />
+                                            <g mask="url(#mask-7)">
+                                                <path fill="rgb(46,58,89)" fill-rule="evenodd"
+                                                    d="M18.33333266 26.125c0 1.51662445-.74750042 2.75-1.66666699 2.75H3.33333325c-.9191668 0-1.66666662-1.23337555-1.66666662-2.75V6.875c0-1.51662493.74749982-2.75 1.66666662-2.75h13.33333242c.91916657 0 1.66666699 1.23337507 1.66666699 2.75v19.25zm-1.66666699-16.5H3.33333325v16.5h13.33416593l-.0008335-16.5z" />
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="main__tabs-text">Cộng đồng</div>
+                        </div>
+                        <div class="main__tabs-item">
+                            <div class="main__tabs-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    width="24" height="24" viewBox="0 0 24 24">
+                                    <defs>
+                                        <rect id="rect-1" width="24" height="24" x="0" y="0" />
+                                        <rect id="rect-2" width="24" height="24" x="0" y="0" rx="0" ry="0" />
+                                        <mask id="mask-3" maskContentUnits="userSpaceOnUse" maskUnits="userSpaceOnUse">
+                                            <rect width="24" height="24" x="0" y="0" fill="black" />
+                                            <use fill="white" xlink:href="#rect-2" />
+                                        </mask>
+                                        <path id="path-4" fill-rule="evenodd"
+                                            d="M20 4H4c-1.10300016 0-2 .84100008-2 1.875v12.25C2 19.1590004 2.89699984 20 4 20h16c1.10300064 0 2-.8409996 2-1.875V5.875C22 4.84100008 21.10300064 4 20 4zM4 17.98900032L20 18V6.01100016L4 6v11.98900032zM9.71502686 8c1.15100002 0 2 .84899998 2 2 0 1.15100002-.84899998 2-2 2-1.15200043 0-2-.84899998-2-2 0-1.15100002.84899997-2 2-2zM18 11h-4V9h4v2zm-8.28499985 1.75C7.67600012 12.75 6 14.6260004 6 16h7.4300003c0-1.3739996-1.67600059-3.25-3.71500015-3.25zM15 13v2h3v-2h-3z" />
+                                        <mask id="mask-5" x="0" y="0" maskContentUnits="userSpaceOnUse"
+                                            maskUnits="userSpaceOnUse">
+                                            <rect width="24" height="24" x="0" y="0" fill="black" />
+                                            <use fill="white" xlink:href="#path-4" />
+                                        </mask>
+                                    </defs>
+                                    <g>
+                                        <use fill="none" xlink:href="#rect-2" />
+                                        <g mask="url(#mask-3)">
+                                            <use fill-opacity="0" stroke="rgb(46,58,89)" stroke-linecap="butt"
+                                                stroke-linejoin="miter" stroke-width="2" mask="url(#mask-5)"
+                                                xlink:href="#path-4" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="main__tabs-text">Nội bộ</div>
+                        </div>
+                        <div class="main__tabs-item">
+                            <div class="main__tabs-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" id="Component_145_1"
+                                    data-name="Component 145 – 1" width="21.979" height="19.879"
+                                    viewBox="0 0 21.979 19.879">
+                                    <path id="Path_326" data-name="Path 326"
+                                        d="M223.853,49.27c.131,0,.238,0,.345,0,.444.005.888,0,1.331.021a.351.351,0,0,1,.254.122c.032.051-.015.184-.066.25-.422.552-.856,1.1-1.281,1.645-.334.432-.659.87-.993,1.3-.252.326-.494.33-.754.016q-1.2-1.453-2.393-2.913c-.068-.084-.135-.244-.1-.319s.2-.116.311-.118q.84-.017,1.681,0c.178,0,.243-.048.278-.228a9.752,9.752,0,0,1,4.912-6.894,9.917,9.917,0,1,1,7.839,18.1,9.665,9.665,0,0,1-9.906-2.335.736.736,0,0,1-.285-.7.657.657,0,0,1,.457-.531.674.674,0,0,1,.7.157c.335.29.654.6,1.013.862a8.546,8.546,0,1,0-3.322-8.683A2.4,2.4,0,0,0,223.853,49.27Z"
+                                        transform="translate(-220.188 -40.87)" fill="#2e3a59" />
+                                    <path id="Path_327" data-name="Path 327"
+                                        d="M262.309,56.717c0,.929.005,1.859,0,2.788,0,.2.057.252.251.252.773,0,1.545.021,2.318.021.811,0,1.623-.02,2.434-.023a.772.772,0,0,1,.838.735.789.789,0,0,1-.709.828c-1.6,0-3.209.009-4.814.013q-.582,0-1.165-.005a.731.731,0,0,1-.694-.742c-.015-.437-.026-.874-.027-1.311,0-1.765,0-3.53,0-5.294a.793.793,0,0,1,.481-.81.776.776,0,0,1,1.091.737C262.314,54.843,262.309,55.78,262.309,56.717Z"
+                                        transform="translate(-249.746 -49.575)" fill="#2e3a59" />
+                                </svg>
+                            </div>
+                            <div class="main__tabs-text">Lịch sử</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-11">
+                    <div class="main__table">
+                        <div class="main__table-header main__heading">
+                            <div class="main__table-search ">
+                                <form class="form-inline">
+                                    <input class="form-control main__table-input" type="search"
+                                        placeholder="Nhập từ khóa tìm kiếm..." aria-label="Search">
+                                    <button class="btn btn-outline-success main__table-btn" type="submit">Tìm
+                                        kiếm</button>
+                                </form>
+                            </div>
+                            <button class="btn btn-danger main__table-create">
+                                <i class="fas fa-plus main__table-create-icon"></i>
+                                Tạo mới
+                            </button>
+                        </div>
+
+                        <div class="main__table-content">
+                            <table id="dtBasicExample" class="table table-hover text-center">
+                                <thead>
+                                    <tr class="table-secondary">
+                                        <th scope="col">Hình ảnh</th>
+                                        <th scope="col" class="sortable">Tựa bài</th>
+                                        <th scope="col">Ngày viết bài</th>
+                                        <th scope="col">Số câu trắc nghiệm</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th colspan="4" style="font-weight: 400;">Không có dữ liệu
+                                        </th>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="fixed-table-pagination">
+                                <div class="float-left pagination-detail">
+                                    <span class="pagination-info">
+                                        Hiển thị từ trang 1 đến 1 của 1 bảng ghi
+                                    </span>
+                                    <div class="page-list">
+                                        <div class="btn-group dropdown dropup">
+                                            <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                data-bs-toggle="dropdown">
+                                                <span class="page-size">
+                                                    10
+                                                </span>
+                                                <span class="caret"></span>
+                                            </button>
+                                            <div class="dropdown-menu"><a class="dropdown-item " href="#">5</a></div>
+                                        </div> bản ghi mỗi trang
+                                    </div>
+                                </div>
+                                <div class="float-right pagination" style="display: none;">
+                                    <ul class="pagination">
+                                        <li class="page-item page-pre"><a class="page-link" aria-label="previous page"
+                                                href="javascript:void(0)">‹</a></li>
+                                        <li class="page-item active"><a class="page-link" aria-label="to page 1"
+                                                href="javascript:void(0)">1</a></li>
+                                        <li class="page-item page-next"><a class="page-link" aria-label="next page"
+                                                href="javascript:void(0)">›</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- <div class="bootstrap-table bootstrap5">
+                            <div class="fixed-table-toolbar">
+                                <div class="bs-bars float-right">
+                                    <div id="toolbar">
+                                        <a href="https://myaloha.vn/tai-khoan/de-thi/create" class="btn btn-danger"><i
+                                                class="fa fa-plus"></i> Tạo mới</a>
+                                    </div>
+                                </div>
+                                <div class="float-left search btn-group">
+                                    <input class="form-control
+                              
+                              search-input" type="search" placeholder="Tìm kiếm" autocomplete="off">
+                                </div>
+                            </div>
+
+                            <div class="fixed-table-container" style="padding-bottom: 0px;">
+                                <div class="fixed-table-header" style="display: none;">
+                                    <table></table>
+                                </div>
+                                <div class="fixed-table-body">
+                                    <div class="fixed-table-loading table text-center table-hover" style="top: 48px;">
+                                        <span class="loading-wrap">
+                                            <span class="loading-text">Đang tải</span>
+                                            <span class="animation-wrap"><span class="animation-dot"></span></span>
+                                        </span>
+
+                                    </div>
+                                    <table id="quiz-table" data-toggle="table"
+                                        data-classes="table text-center table-hover" data-method="post"
+                                        data-search="true" data-search-align="left" data-toolbar="#toolbar"
+                                        data-toolbar-align="right" data-pagination="true" data-mobile-responsive="true"
+                                        data-page-list="[5, 10, 20, 50, 100, 200]"
+                                        data-content-type="application/x-www-form-urlencoded; charset=UTF-8"
+                                        class="table text-center table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th style="" data-field="image_html">
+                                                    <div class="th-inner ">Hình ảnh</div>
+                                                    <div class="fht-cell"></div>
+                                                </th>
+                                                <th class="text-left" style="" data-field="title">
+                                                    <div class="th-inner sortable both desc">Tựa bài</div>
+                                                    <div class="fht-cell"></div>
+                                                </th>
+                                                <th style="" data-field="created_at">
+                                                    <div class="th-inner ">Ngày viết bài</div>
+                                                    <div class="fht-cell"></div>
+                                                </th>
+                                                <th style="" data-field="status_html">
+                                                    <div class="th-inner ">Số câu trắc nghiệm</div>
+                                                    <div class="fht-cell"></div>
+                                                </th>
+                                                <th style="width: 150px; " data-field="actions">
+                                                    <div class="th-inner ">&nbsp;</div>
+                                                    <div class="fht-cell"></div>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr data-index="0">
+                                                <td colspan="5">Không có dữ liệu</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="fixed-table-footer"></div>
+                            </div>
+
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Main -->
+
+
+
+    <!-- JS DataTables -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+    <!-- JS Bootstrap -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script> -->
+
+    <script src="./assets/js/main.js"></script>
+
+    <script>
+        // $(document).ready(function () {
+        //     $("#dtBasicExample").DataTable();
+        //     $(".dataTables_length").addClass("bs-select");
+        // });
+    </script>
+</body>
+
+</html>
