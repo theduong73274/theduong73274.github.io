@@ -1,0 +1,81 @@
+.confirmPhone {
+    min-height: 58vh;
+    margin: 38px 0;
+    &.hide {
+        display: none;
+    }
+    &__content {
+        background-color: #fff;
+        padding: 37px 35px 88px;
+        margin: auto;
+        // width: 54%;
+        width: 650px;
+        box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.14);
+    }
+    &__header {
+        @include flexBox(hor);
+        &-icon {
+            fill: #000;
+            width: 25px;
+        }
+        &-title {
+            text-transform: uppercase;
+            width: 90%;
+            text-align: center;
+            font-size: 2.1rem;
+        }
+    }
+    &__main {
+        text-align: center;
+        margin: 78px 0 0;
+        &-description {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+        }
+        &-phone {
+            font-size: 1.8rem;
+            display: block;
+            margin-bottom: 20px;
+        }
+        &-line {
+            @include flexBox(both);
+            &-item {
+                margin: 0px 12px 0;
+                height: 2px;
+                width: 30px;
+                background-color: #777777;
+            }
+        }
+        &-input {
+            border: 0;
+            outline: 0;
+            width: 63%;
+            padding: 40px 0 0 41px;
+            font-size: 3rem;
+            letter-spacing: 37px;
+        }
+    }
+    &__btn {
+        margin: 50px 0;
+        text-align: center;
+        &-next {
+            font-size: 1.7rem;
+            border-radius: 6px;
+            width: 60%;
+            &.invalid {
+                cursor: not-allowed;
+                background-color: #ef6371;
+                border-color: #ef6371;
+                box-shadow: none !important;
+            }
+        }
+    }
+    &__text {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+    &__link {
+        font-size: 1.8rem;
+        margin-top: 10px;
+    }
+}

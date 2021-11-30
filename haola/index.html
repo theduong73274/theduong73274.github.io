@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="icon" href="./assets/img/saovang.png" type="image/x-icon">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="./owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="./owlcarousel/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./owlcarousel/owl.carousel.min.js"></script>
+
+</head>
+
+<body>
+    <!-- Begin Header -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero__header">
+                <div class="hero__header-logo">
+                    <img src="./assets/img/header.png" alt="" class="hero__header-logo-img">
+                </div>
+
+                <!-- Begin nav PC -->
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 hero__header-list">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Trang chủ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#inputThreads">Dự thi</a>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="inputThreads" tabindex="-1" aria-labelledby="inputThreads"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog hero__header-modal  modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">DỰ THI</h5>
+                                                <!-- Btn Close -->
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <input type="text" class="form-control hero__header-modal-input"
+                                                        placeholder="Ví dụ: DTN227">
+                                                    <p class="hero__header-modal-text">Vui lòng Nhấp mã ký tự do Ban tổ
+                                                        chức cung
+                                                        cấp</p>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <a href="#" type="button" id="upload"
+                                                    class="btn btn-danger main__exam-modal-upload"
+                                                    data-bs-dismiss="modal">Vào thi</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Tạo cuộc thi</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Tìm cuộc thi</a>
+                            </li>
+
+                            <!-- Logged -->
+                            <!-- <li class="nav-item dropdown">
+                                <div class="header__login dropdown-toggle" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <span class="header__login-name">Thần Thi</span>
+                                </div>
+
+                                <ul class="dropdown-menu header__login-list">
+                                    <li class="header__login-item">
+                                        <a href="#" class="header__login-link dropdown-item">Thông tin cá nhân</a>
+                                    </li>
+                                    <li class="header__login-item">
+                                        <a href="#" class="header__login-link dropdown-item">Lịch sử làm bài</a>
+                                    </li>
+                                    <li class="header__login-item">
+                                        <a href="#" class="header__login-link dropdown-item">Đăng xuất</a>
+                                    </li>
+                                </ul>
+                            </li> -->
+
+                            <!-- Not Logged In -->
+                            <button class="btn btn-success hero__header-btn" data-bs-toggle="modal"
+                                data-bs-target="#exampleModalToggle" role="button">Đăng nhập</button>
+
+                            <!-- Modal LogIn -->
+                            <div class="modal fade" id="exampleModalToggle" aria-hidden="true"
+                                aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                                <div class="modal-dialog modal-dialog-centered hero__header-modal  hero__header-login">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalToggleLabel">Đăng nhập</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form action="" method="post" name="login">
+                                                <div class="form-group">
+                                                    <label for="phone">Số điện thoại:</label>
+                                                    <input type="tel" name="phone" class="form-control" id="phone"
+                                                        pattern="[0]{1}[0-9]{3}[0-9]{3}[0-9]{3}" required
+                                                        placeholder="Nhập số điện thoại">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="password">Mật khẩu:</label>
+                                                    <input type="password" name="password" id="password"
+                                                        class="form-control" placeholder="Nhập mật khẩu">
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="text-center form-forgetPass">
+                                                        <a data-toggle="modal" href="#ForgetPass"
+                                                            data-bs-toggle="modal">Quên mật khẩu</a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 text-center ">
+                                                    <button type="submit" class=" btn mybtn btn-danger">Đăng
+                                                        nhập</button>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="form-signup text-center">Bạn chưa có tài khoản?
+                                                        <a data-toggle="modal" href="#exampleModalToggle2"
+                                                            data-bs-toggle="modal">
+                                                            Đăng kí tại đây
+                                                        </a>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Forgot Password LogIn -->
+                            <div class="modal fade" id="ForgetPass" aria-hidden="true" aria-labelledby="ForgetPassLabel"
+                                tabindex="-1">
+                                <div class="modal-dialog modal-dialog-centered hero__header-modal  hero__header-login">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="ForgetPassLabel">Xác thực</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form action="" method="post" name="forget">
+                                                <div class="form-group">
+                                                    <input type="tel" class="form-control form-forgetNumber"
+                                                        pattern="[0]{1}[0-9]{3}[0-9]{3}[0-9]{3}"
+                                                        placeholder="Số điện thoại" autocomplete="tel" name="phone"
+                                                        value="">
+                                                </div>
+                                                <div class="col-md-12 text-center ">
+                                                    <a href="#" class=" btn mybtn btn-danger form-forgetNumber-btn">Tiếp
+                                                        theo</a>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Modal SignUp-->
+                            <div class="modal fade" id="exampleModalToggle2" aria-hidden="true"
+                                aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                                <div class="modal-dialog modal-dialog-centered hero__header-modal  hero__header-login">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalToggleLabel2">Đăng ký</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form action="" method="post" name="login">
+                                                <div class="form-group">
+                                                    <label for="numberSignup">Số điện thoại:</label>
+                                                    <input type="tel" name="numberSignup" class="form-control"
+                                                        id="numberSignup" aria-describedby="emailHelp"
+                                                        placeholder="Nhập số điện thoại">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="passwordSignUp">Mật khẩu:</label>
+                                                    <input type="password" name="password" id="passwordSignUp"
+                                                        class="form-control" aria-describedby="emailHelp"
+                                                        placeholder="Nhập mật khẩu">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="passwordComfim">Xác nhận mật khẩu:</label>
+                                                    <input type="password" name="password" id="passwordComfim"
+                                                        class="form-control" aria-describedby="emailHelp"
+                                                        placeholder="Nhập lại mật khẩu">
+                                                </div>
+                                                <div class="col-md-12 text-center">
+                                                    <button type="submit"
+                                                        class=" btn mybtn btn-danger form-btn-signup">Đăng ký</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- End nav PC -->
+
+                <!-- Begin nav Mobile -->
+                <div class="hero__header-mobile">
+                    <div class="hero__header-mobile-heading">
+                        <a class="nav-link nav-link-color active" aria-current="page" href="#input1"
+                            data-bs-toggle="modal">Dự thi</a>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="input1" tabindex="-1" aria-labelledby="input1" aria-hidden="true">
+                            <div class="modal-dialog hero__header-modal  modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">DỰ THI</h5>
+                                        <!-- Btn Close -->
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <input type="text" class="form-control hero__header-modal-input"
+                                                placeholder="Ví dụ: DTN227">
+                                            <p class="hero__header-modal-text">Vui lòng Nhấp mã ký tự do Ban tổ
+                                                chức cung
+                                                cấp</p>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="#" type="button" id="upload"
+                                            class="btn btn-danger main__exam-modal-upload" data-bs-dismiss="modal">Vào
+                                            thi</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero__header-mobile-menu" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                            <i class="fas fa-bars hero__header-mobile-icon"></i>
+                        </div>
+                    </div>
+                    <div class="offcanvas offcanvas-end hero__header-offCanvas" tabindex="-1" id="offcanvasRight"
+                        aria-labelledby="offcanvasTopLabel">
+                        <div class="offcanvas-header">
+                            <!-- <h5 id="offcanvasTopLabel">Offcanvas top</h5> -->
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav hero__header-offCanvas-list">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Trang chủ</a>
+                                </li>
+                                <li class="nav-item">
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Tạo cuộc thi</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Tìm cuộc thi</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- End nav Mobile -->
+
+
+            </div>
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Begin Banner -->
+    <section class="banner">
+        <div class="banner__slides">
+            <div class="owl-carousel owl-theme" id="owl-banner">
+                <a href="" class="banner__slides-item">
+                    <img src="./assets/img/avatar-1637656814199.jpg" alt="" class="banner__img">
+                </a>
+                <a href="" class="banner__slides-item">
+                    <img src="./assets/img/avatar-1637656814199.jpg" alt="" class="banner__img">
+                </a>
+                <a href="" class="banner__slides-item">
+                    <img src="./assets/img/avatar-1637656814199.jpg" alt="" class="banner__img">
+                </a>
+            </div>
+        </div>
+        <div class="container">
+            <!-- <div class="banner__content">
+                <h2 class="banner__heading">Nền tảng tạo Cuộc thi trực tuyến chuyên nghiệp</h2>
+                <p class="banner__text">
+                    Tự tay xây dựng Hội thi chuyên nghiệp trong vòng 10 phút cùng WebNganh.vn
+                    <br>
+                    Nền tảng tạo Hội thi trực tuyến dành riêng cho Cơ quan Nhà nước, Doanh nghiệp và Trường học
+                </p>
+
+                <a href="#" class="btn btn-danger banner__btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                        class="bi bi-lightning" viewBox="0 0 16 16">
+                        <path
+                            d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641l2.5-8.5zM6.374 1 4.168 8.5H7.5a.5.5 0 0 1 .478.647L6.78 13.04 11.478 7H8a.5.5 0 0 1-.474-.658L9.306 1H6.374z" />
+                    </svg>
+                    Trải nghiệm ngay</a>
+            </div> -->
+        </div>
+    </section>
+    <!-- End Banner -->
+
+    <!-- Begin NewsExam -->
+    <section class="newsExam">
+        <div class="container">
+            <h3 class="newsExam__header">Cuộc thi lớn được diễn ra</h3>
+            <div class="newsExam__main">
+                <div class="row gx-5">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="newsExam__main-item">
+                            <div class="newsExam__main-img" style="background-image: url(./assets/img/newsExam1.jpg)">
+                            </div>
+                            <div class="newsExam__main-content">
+                                <div class="newsExam__main-name">Hội thi báo cáo viên giỏi thành phố</div>
+                                <p class="newsExam__main-position">
+                                    <i class="fas fa-user newsExam__main-icon"></i>
+                                    Thành phố Hải Phòng
+                                </p>
+                                <p class="newsExam__main-time">
+                                    <i class="fas fa-clock newsExam__main-icon"></i>
+                                    22/11/2021 - 03/12/2021
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="newsExam__main-item">
+                            <div class="newsExam__main-img" style="background-image: url(./assets/img/newsExam2.jpg)">
+                            </div>
+                            <div class="newsExam__main-content">
+                                <div class="newsExam__main-name">Hội thi báo cáo viên giỏi thành phố</div>
+                                <p class="newsExam__main-position">
+                                    <i class="fas fa-user newsExam__main-icon"></i>
+                                    Thành phố Hải Phòng
+                                </p>
+                                <p class="newsExam__main-time">
+                                    <i class="fas fa-clock newsExam__main-icon"></i>
+                                    22/11/2021 - 03/12/2021
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="newsExam__main-item">
+                            <div class="newsExam__main-img" style="background-image: url(./assets/img/newsExam3.jpg)">
+                            </div>
+                            <div class="newsExam__main-content">
+                                <div class="newsExam__main-name">Hội thi báo cáo viên giỏi thành phố</div>
+                                <p class="newsExam__main-position">
+                                    <i class="fas fa-user newsExam__main-icon"></i>
+                                    Thành phố Hải Phòng
+                                </p>
+                                <p class="newsExam__main-time">
+                                    <i class="fas fa-clock newsExam__main-icon"></i>
+                                    22/11/2021 - 03/12/2021
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- End NewsExam -->
+
+    <!-- Begin Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row row-cols-5">
+                <div class="col-lg-5 col-md-12 col-12">
+                    <div class="footer__info-icon">
+                        <img src="./assets/img/logo_footer.png" alt="" class="footer__img">
+                        <ul class="footer__info-socials">
+                            <li><a href="#" class="footer__info-socials-link"><i class="fab fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li><a href="#" class="footer__info-socials-link"><i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li><a href="#" class="footer__info-socials-link"><i class="fab fa-skype"></i></a>
+                            </li>
+                            <li><a href="#" class="footer__info-socials-link"><i class="fab fa-youtube"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-7 col-md-12 col-12">
+                    <div class="footer__info-content">
+                        <div class="footer__info">
+                            <div class="footer__info-text">
+                                <h4 class="footer__info-header"><strong>THÀNH ĐOÀN HẢI PHÒNG</strong></h4>
+                                <p>Số 22 Trần Hưng Đạo, Hải Phòng</p>
+                                <p>Ðiện thoại: 031.37450001</p>
+                                <p>Email: thanhdoanhaiphong@gmail.com</p>
+
+
+                            </div>
+                            <div>
+
+                            </div>
+                        </div>
+                        <div class="footer__info">
+                            <div class="footer__info-text">
+                                <h4 class="footer__info-header">
+                                    <strong>Tin tức mới</strong>
+                                </h4>
+                                <ul class="footer__info-text-list" id="hot-list">
+                                    <li>
+                                        <a href="http://tracnghiem.thanhdoanhaiphong.gov.vn/tin-tuc/cong-tac-to-chuc/tai-lieu-sinh-hoat-chi-doan-thang-52021-7022"
+                                            title="Tài liệu Sinh hoạt chi đoàn tháng 5/2021">Tài liệu Sinh hoạt chi
+                                            đoàn...</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://tracnghiem.thanhdoanhaiphong.gov.vn/tin-tuc/cong-tac-to-chuc/chuong-trinh-ngay-doan-vien-nam-2021-6893"
+                                            title="Chương  trình Ngày đoàn viên năm 2021">Chương trình Ngày đoàn viên
+                                            năm...</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://tracnghiem.thanhdoanhaiphong.gov.vn/tin-tuc/cong-tac-to-chuc/tai-lieu-sinh-hoat-chi-doan-thang-032021-6744"
+                                            title="Tài liệu Sinh hoạt chi đoàn tháng 03/2021">Tài liệu Sinh hoạt chi
+                                            đoàn...</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://tracnghiem.thanhdoanhaiphong.gov.vn/tin-tuc/cong-tac-giao-duc/tuoi-tre-thanh-pho-xung-kich-tinh-nguyen-chong-dich-covid-19-trong-dip-tet-nguyen-dan-tan-suu-2021-6719"
+                                            title="Tuổi trẻ thành phố xung kích, tình nguyện chống dịch Covid-19 trong dịp Tết Nguyên Đán Tân Sửu 2021">Tuổi
+                                            trẻ thành phố xung kích,...</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p class="footer__bottom-text">Copyright&nbsp;2021 &copy; Design by Thành đoàn Hải Phòng</p>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+    <script>
+        var owlHeader = $("#owl-banner");
+        owlHeader.owlCarousel({
+            loop: true,
+            margin: 0,
+            nav: true,
+            dots: false,
+            autoplay: true,
+            autoplayTimeout: 8000,
+            autoplayHoverPause: true,
+            items: 1,
+        });
+        owlHeader.on("mousewheel", ".owl-stage", function (e) {
+            if (e.deltaY > 0) {
+                owl.trigger("next.owl");
+            } else {
+                owl.trigger("prev.owl");
+            }
+            e.preventDefault();
+        });
+    </script>
+</body>
+
+</html>

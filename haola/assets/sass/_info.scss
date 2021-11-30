@@ -1,0 +1,118 @@
+.info {
+    &__over {
+        padding: 8px 0 0 8px;
+        width: 90%;
+        margin: auto;
+        &-count {
+            position: absolute;
+            right: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-style: italic;
+            color: $color-dark;
+        }
+        &-input {
+            position: relative;
+            margin: 20px auto 0;
+            height: 60px;
+            & > input {
+                height: 60px !important;
+                padding: 30px 100px 8px 20px !important;
+                border-radius: 6px;
+                font-size: 1.7rem;
+                &:focus {
+                    font-size: 1.9rem;
+                    padding: 25px 100px 7px 20px !important;
+                }
+                &:focus ~ label {
+                    padding-top: 0;
+                    font-size: 1.4rem;
+                }
+            }
+            & > label {
+                font-size: 1.8rem !important;
+                @include flexBox(hor);
+                padding-left: 20px;
+            }
+        }
+        &-contain {
+            margin-top: 20px;
+        }
+        &-text {
+            font-size: 1.8rem;
+            height: 100%;
+            @include flexBox(both);
+        }
+        &-date {
+            padding: 8px 10px;
+            font-size: 1.6rem;
+            &-icon {
+                font-size: 1.7rem;
+                padding: 12px 10px;
+            }
+        }
+        &-btn {
+            float: right;
+            @extend %main__btn;
+            font-size: 1.8rem;
+            padding: 8px 24px;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+        &-select {
+            height: 60px;
+            & > .form-floating {
+                height: 100%;
+                & > .form-select {
+                    font-size: 1.7rem;
+                    padding: 16px 20px 0px;
+                    height: 100%;
+                }
+                & > label {
+                    font-size: 1.8rem;
+                    padding-left: 24px;
+                    margin-top: 4px;
+                }
+            }
+        }
+        &-time {
+            margin-top: 24px;
+            margin-left: 20px;
+
+            & > .form-floating {
+                & > input {
+                    border-radius: 6px;
+                    padding-top: 29px !important;
+                    padding-left: 20px;
+                    height: 60px;
+                    font-size: 1.7rem;
+                    width: 30%;
+                }
+                & > label {
+                    font-size: 1.7rem;
+                    padding: 16px 16px;
+                }
+            }
+            &-warn {
+                color: #666666;
+                padding-left: 10px;
+                margin-top: 6px;
+                display: block;
+                font-size: 1.5rem;
+            }
+        }
+    }
+    &__tabs {
+        &-link {
+            cursor: pointer;
+            display: block;
+            padding: 15px 20px 15px;
+            font-size: 1.9rem;
+            color: $color-main;
+            border-top-left-radius: 4px;
+            &:hover {
+                color: $color-main;
+            }
+        }
+    }
+}
