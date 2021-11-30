@@ -144,6 +144,9 @@
     padding: 30px 8px 20px;
     font-size: 2.6rem;
   }
+  .newsExam__main{
+    padding: 0 10px;
+  }
   .footer__info-socials-link > i {
     margin: 9px;
   }
