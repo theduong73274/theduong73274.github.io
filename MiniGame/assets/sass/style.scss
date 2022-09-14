@@ -1,0 +1,12 @@
+// ================= SCSS SetUp =================
+@import "./SetUpBase/variables";
+@import "./SetUpBase/reset";
+@import "./SetUpBase/mixin";
+@import "./SetUpBase/base";
+
+// ================= SCSS General =================
+// @import "./Layout/header";
+// @import "./Layout/footer";
+
+// ================= SCSS Content =================
+@import "./Components/game";

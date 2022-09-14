@@ -1,0 +1,31 @@
+// =================== Font family text ==================
+// @import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Expanded:wght@500&display=swap');
+
+@font-face {
+    src: url("/assets/css/webfonts/SF-Pro-Text-Semibold.otf");
+    font-family: "SF-Pro-Text-Semibold";
+}
+
+$font-text-main: "SF-Pro-Text-Semibold";
+
+@font-face {
+    src: url("/assets/css/webfonts/FontsFree-Net-SFProText-Heavy-1.ttf");
+    font-family: "SF-Pro-Text-Heavy";
+}
+
+$font-text-bold: "SF-Pro-Text-Heavy";
+
+// ======================== Color Main ========================
+$color-main: #ffba32;
+$color-mix: linear-gradient(180deg, #ff8c04 0%, #ffba32 90%);
+$border-color: #f36b2f;
+
+// ======================== Background Color ========================
+$back-orange: #ff9400;
+$back-white: #fff;
+
+// ======================== Text color ========================
+$text-main: #ee6a22;
+$text-gray: #000;
+$text-light: #9a9a9a;
+$text-logIn: #af9e91;

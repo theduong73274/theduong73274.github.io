@@ -1,0 +1,165 @@
+.footer {
+    position: relative;
+    z-index: 1;
+    padding: 70px 0 0;
+
+    border-top: 10px solid $yellow-color;
+    background-repeat: no-repeat;
+    background-image: $color-mix-left;
+
+    &::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 0;
+
+        width: 36%;
+        height: 100%;
+        background-image: url(/assets/images/Another/world.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    &-wrapper {
+        position: relative;
+        z-index: 1;
+
+        @include gridBox(4, 0, 20px);
+        padding-bottom: 60px;
+        border-bottom: 1.4px solid $yellow-color;
+
+        @include responsive_bothTM {
+            @include gridBox(2, 50px, 40px);
+        }
+
+        @include responsive_mobile {
+            gap: 32px 20px;
+        }
+    }
+
+    &-place {
+        font-size: 1.7rem;
+
+        @include responsive_bothTM {
+            width: 84%;
+            margin: 0 auto;
+
+            grid-row-start: 2;
+            grid-row-end: 2;
+            grid-column-start: 1;
+            grid-column-end: 2;
+        }
+
+        @include responsive_mobile {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+
+        &__company {
+            color: $yellow-color;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        &__item {
+            @include flexBox(hor);
+            align-items: flex-start;
+
+            color: $back-white;
+            line-height: 24px;
+            padding: 10px 0;
+
+            &>svg {
+                min-width: 24px;
+                margin: 2px 14px 0 0;
+            }
+        }
+    }
+
+    &-logo {
+        &>img {
+            @include responsive_bothTM {
+                margin: 0 auto;
+                max-height: 134px;
+                height: 100%;
+            }
+        }
+    }
+
+    &-link {
+        margin-left: auto;
+        width: 74%;
+
+        @include responsive_bothTM {
+            width: 88%;
+            margin-left: auto;
+        }
+
+        @include responsive_mobile {
+            width: 100%;
+        }
+
+        .nav-link {
+            padding: 8px 10px;
+            color: $back-white;
+
+            &:hover {
+                color: $yellow-color;
+            }
+
+            @include responsive_bothTM {
+                font-size: 1.7rem;
+            }
+        }
+    }
+
+    &-social {
+        width: 62%;
+        margin-left: auto;
+
+        @include responsive_fitLow {
+            width: 80%;
+        }
+
+        @include responsive_HD {
+            width: 72%;
+        }
+
+        @include responsive_bothTM {
+            width: 66%;
+            margin: 0 auto;
+        }
+
+        @include responsive_mobile {
+            width: 50%;
+
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+
+        &__title {
+            color: $yellow-color;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+
+            font-size: 1.5rem;
+            border-bottom: 1px solid $yellow-color;
+        }
+
+        &__list {
+            // @include gridBox(3, 10px, 10px);
+            @include flexBox(bothSides);
+        }
+    }
+
+    &-license {
+        color: $yellow-color;
+        line-height: 24px;
+        padding: 20px 0 18px;
+
+        @include responsive_bothTM {
+            text-align: center;
+        }
+    }
+}

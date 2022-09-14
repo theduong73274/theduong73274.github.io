@@ -1,0 +1,115 @@
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth !important;
+}
+
+body {
+  scroll-behavior: smooth !important;
+  transition: all 0.3s ease;
+  transition: 0.3s;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  // font-family: $font-text-bold;
+  // font-family: $primary-font;
+  font-family: $font-text-main;
+
+  line-height: 1;
+
+  color: $text-main;
+  position: static;
+  margin: 0;
+  font-size: 1.6rem;
+  padding-right: 0 !important;
+
+  // @include responsive_Change {
+  //   min-width: 1240px;
+  //   overflow-x: auto;
+  // }
+
+  @include responsive_bothTM {
+    background-color: $back-white !important;
+
+    .container-xl {
+      padding: 0 10px;
+    }
+  }
+}
+
+.back-white {
+  background-color: #fff;
+}
+
+.hide {
+  display: none !important;
+}
+
+.btn-button {
+  background-color: #ff8137;
+  font-size: 1.6rem;
+  color: #fff;
+  border-radius: 8px;
+  padding: 5px 20px;
+
+  &:hover {
+    color: $back-white;
+    opacity: 0.9;
+  }
+}
+
+.modal-backdrop.show {
+  opacity: 0.9;
+}
+
+button:focus {
+  box-shadow: none !important;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+    transform: translateY(-65%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes flip-scale-down-diag {
+  0% {
+    transform: scale(1) rotate3d(-1, 1, 0, 0deg);
+  }
+  50% {
+    transform: scale(0.4) rotate3d(-1, 1, 0, -90deg);
+  }
+  100% {
+    transform: scale(1) rotate3d(-1, 1, 0, -180deg);
+  }
+}
+
+// ::-webkit-scrollbar {
+//     width: 6px;
+// }
+
+/* Track */
+// ::-webkit-scrollbar-track {
+//     background: #f1f1f1;
+//     border-radius: 50px;
+// }
+
+/* Handle */
+// ::-webkit-scrollbar-thumb {
+//     border-radius: 50px;
+//     background: #dcdcdc;
+// }
+
+/* Handle on hover */
+// ::-webkit-scrollbar-thumb:hover {
+//     background: #a1a1a1;
+// }
